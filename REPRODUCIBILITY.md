@@ -91,4 +91,4 @@ The original experiments were CPU runs. Exact wall-clock time depends on data ac
 
 ## 10. Repository and citation metadata
 
-Author metadata are recorded in `README.md` and `CITATION.cff`. The authors' original code and documentation are released under the MIT License; this license does not relicense third-party datasets or external dependencies. The repository URL, Zenodo DOI, ORCID identifiers, and publication date remain unresolved and should be completed when available.
+ The authors' original code and documentation are released under the MIT License; this license does not relicense third-party datasets or external dependencies. 
