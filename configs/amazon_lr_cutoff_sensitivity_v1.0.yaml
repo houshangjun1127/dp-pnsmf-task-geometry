@@ -1,0 +1,51 @@
+protocol_id: AMAZON-LR-CUTOFF-SENSITIVITY-20260809-V1
+frozen_at: 2026-08-09T12:32:16+08:00
+study_phase: result_dependent_sensitivity_after_main_results
+purpose: >-
+  Test whether Amazon Kindle's severe DP loss at the published P-NSMF learning
+  rate can be explained solely by its larger learning rate, and assess whether
+  the matched-control conclusion is stable at cutoff 10 as well as cutoff 20.
+
+learning_rate_sensitivity:
+  dataset: amazon_kindle
+  copies: [1, 2, 3]
+  seeds_by_copy: {1: 20260821, 2: 20260822, 3: 20260823}
+  reused_published_setting:
+    user_learning_rate: 7.0
+    item_learning_rate: 0.7
+    source: task_geometry_budget_analysis_v1
+  new_fixed_settings:
+    - id: equalized_both_lr3
+      user_learning_rate: 3.0
+      item_learning_rate: 0.3
+      rationale: Match the MovieLens learning-rate scale while preserving the one-tenth item-step convention.
+    - id: reduced_item_only
+      user_learning_rate: 7.0
+      item_learning_rate: 0.3
+      rationale: Separate the server item-step scale from the published user-factor step.
+  arms:
+    matched_no_noise: {sampling_probability: 0.1, clip_norm: 1.0, noise_multiplier: 0.0}
+    user_dp: {sampling_probability: 0.1, clip_norm: 1.0, noise_multiplier: 3.0}
+  common:
+    rounds: 200
+    embedding_dim: 20
+    learning_rate_decay: 0.999
+    delta: 1.0e-5
+    evaluation_target: test
+    cutoff: 20
+    contribution_space: direct_item_gradient
+    contribution_rule: clip
+
+cutoff_robustness:
+  source_factors: task_geometry_budget_analysis_v1
+  datasets: [ml1m, amazon_kindle, netflix5k5k]
+  arms: [matched, eps2p193]
+  cutoffs: [10, 20]
+  seen_mask: train_file_only
+
+reporting:
+  - Label all additions as result-dependent sensitivity analyses, not prospective confirmation.
+  - Use the preprocessed copy as the descriptive paired unit; n=3 per dataset and setting.
+  - Report copy-level values, arithmetic means, between-copy sample standard deviations, absolute paired differences, and relative losses.
+  - Do not use asymptotic significance tests or confidence intervals.
+  - Do not select a preferred learning rate from these test-set analyses.

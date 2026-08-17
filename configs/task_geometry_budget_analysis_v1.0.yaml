@@ -1,0 +1,70 @@
+protocol_id: TASK-GEOMETRY-BUDGET-ANALYSIS-20260808-V1
+frozen_at: 2026-08-08T22:10:00+08:00
+study_phase: post_result_analysis_after_main_results_were_inspected
+purpose: >-
+  Test whether task-local ranking geometry is descriptively consistent with
+  the cross-dataset utility difference, and assess whether the original
+  conclusion is robust across a prespecified epsilon grid.
+
+datasets: [ml1m, amazon_kindle, netflix5k5k]
+copies: [1, 2, 3]
+seeds_by_copy: {1: 20260821, 2: 20260822, 3: 20260823}
+
+frozen_training:
+  rounds: 200
+  embedding_dim: 20
+  sampling_probability: 0.1
+  clip_norm: 1.0
+  learning_rate_decay: 0.999
+  contribution_space: direct_item_gradient
+  contribution_rule: clip
+  evaluation_target: test
+  cutoff: 20
+  seen_mask: train_file_only
+  delta: 1.0e-5
+
+budget_grid:
+  - {target_epsilon: 1.0, noise_multiplier: 5.888829162483715}
+  - {target_epsilon: 2.193078238018666, noise_multiplier: 3.0}
+  - {target_epsilon: 4.0, noise_multiplier: 1.8856350365894983}
+  - {target_epsilon: 8.0, noise_multiplier: 1.2158932001187188}
+
+matched_control:
+  sampling_probability: 0.1
+  clip_norm: 1.0
+  noise_multiplier: 0.0
+
+task_geometry_definitions:
+  reference_arm: matched_clip_no_noise
+  evaluated_users: users_with_at_least_one_test_target
+  margin_at_20: control_score_rank_20_minus_control_score_rank_21
+  local_boundary_perturbation: >-
+    Sum of the absolute DP-minus-control score changes for the items ranked
+    20 and 21 by the matched control.
+  full_catalog_linf_perturbation: >-
+    Maximum absolute DP-minus-control score change over unmasked candidate
+    items for each user.
+  conservative_stability_ratio: margin_at_20_divided_by_twice_full_catalog_linf
+  top20_replacement_fraction: one_minus_intersection_size_divided_by_20
+  top20_jaccard: intersection_size_divided_by_union_size
+  target_rank: rank_of_the_highest_scoring_held_out_test_item
+
+analysis_unit: fixed_dataset_copy
+reporting:
+  - user_level_distributions_are_descriptive_not_independent_replication
+  - copy_level_values_and_between_copy_standard_deviation
+  - no_population_significance_claim_with_three_preprocessed_copies
+  - exact_accountant_epsilon_for_every_run
+
+mechanism_upgrade_gate: >-
+  Score geometry may be described as consistent with an amplification
+  mechanism only if Amazon has a lower median conservative stability ratio
+  and a higher top-20 replacement fraction than both MovieLens-1M and
+  Netflix-5K5K in every one of the three paired copies at the original
+  epsilon=2.193078238018666 operating point. Otherwise the cross-dataset
+  mechanism remains unresolved.
+
+interpretation_limits:
+  - This analysis was designed after inspecting the main results and is not prospective confirmation.
+  - Association between geometry and utility loss is not causal identification.
+  - The no-noise control and diagnostic factors are not DP release outputs.

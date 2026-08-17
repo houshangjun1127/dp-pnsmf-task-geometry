@@ -1,0 +1,59 @@
+protocol_id: XDATA-LR-CUTOFF-SENSITIVITY-20260809-V1
+record_created_at: 2026-08-09T13:59:49+08:00
+study_phase: result_dependent_sensitivity_after_main_results
+purpose: >-
+  Test whether the Amazon-only learning-rate result generalizes across the
+  three fixed datasets, and assess cutoff robustness at 5, 10, 20, and 50.
+
+analysis_status:
+  - This is a post-result sensitivity analysis, not prospective confirmation.
+  - It is not used to select a preferred learning rate.
+  - All settings, copies, seeds, outcomes, and reuse rules were fixed before new runs.
+
+datasets: [ml1m, amazon_kindle, netflix5k5k]
+copies: [1, 2, 3]
+seeds_by_copy: {1: 20260821, 2: 20260822, 3: 20260823}
+
+learning_rate_settings:
+  common_lr3:
+    user_learning_rate: 3.0
+    item_learning_rate: 0.3
+    rationale: >-
+      Align the three datasets to the MovieLens scale to test whether the
+      original cross-dataset separation remains under a common optimizer scale.
+  high_lr7_stress:
+    user_learning_rate: 7.0
+    item_learning_rate: 0.7
+    rationale: >-
+      Apply the original Amazon scale to MovieLens and Netflix to test whether
+      a high learning rate alone reproduces Amazon-like loss.
+
+reuse_rules:
+  ml1m_common_lr3: task_geometry_budget_analysis_v1
+  amazon_common_lr3: amazon_lr_cutoff_sensitivity_v1/equalized_both_lr3
+  amazon_high_lr7_stress: task_geometry_budget_analysis_v1
+  new_runs:
+    - ml1m_high_lr7_stress
+    - netflix5k5k_common_lr3
+    - netflix5k5k_high_lr7_stress
+
+arms:
+  matched: {sampling_probability: 0.1, clip_norm: 1.0, noise_multiplier: 0.0}
+  user_dp: {sampling_probability: 0.1, clip_norm: 1.0, noise_multiplier: 3.0}
+
+common:
+  rounds: 200
+  embedding_dim: 20
+  learning_rate_decay: 0.999
+  delta: 1.0e-5
+  evaluation_target: test
+  primary_cutoff: 20
+  cutoff_sensitivity: [5, 10, 20, 50]
+  contribution_space: direct_item_gradient
+  contribution_rule: clip
+
+reporting:
+  - Fixed preprocessed copy is the descriptive paired unit; n=3 per dataset and setting.
+  - Report raw copy values, arithmetic means, sample standard deviations, paired differences, and relative losses.
+  - Report matched-control utility because learning-rate changes may alter convergence as well as DP loss.
+  - Do not use asymptotic significance tests or confidence intervals.

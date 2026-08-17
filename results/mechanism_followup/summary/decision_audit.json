@@ -1,0 +1,142 @@
+{
+  "protocol_id": "TASK-GEOMETRY-BUDGET-ANALYSIS-20260808-V1",
+  "study_phase": "post_result_analysis_after_main_results_were_inspected",
+  "runs": 45,
+  "independent_unit": "fixed_dataset_copy",
+  "copies_per_dataset": 3,
+  "mechanism_upgrade_gate": {
+    "original_epsilon": 2.193078238018666,
+    "copy_checks": {
+      "1": {
+        "amazon_ratio_lower_than_both": true,
+        "amazon_replacement_higher_than_both": true
+      },
+      "2": {
+        "amazon_ratio_lower_than_both": true,
+        "amazon_replacement_higher_than_both": true
+      },
+      "3": {
+        "amazon_ratio_lower_than_both": true,
+        "amazon_replacement_higher_than_both": true
+      }
+    },
+    "passed": true
+  },
+  "budget_decisions": {
+    "ml1m": {
+      "epsilon=1": {
+        "conditions": {
+          "all_copy_median_snr_below_1": true,
+          "dp_ndcg_lower_in_every_copy": false,
+          "mean_relative_ndcg_loss_at_least_50_percent": false
+        },
+        "noise_dominated_by_frozen_rule": false,
+        "mean_relative_ndcg_loss": 0.0013460628473433618
+      },
+      "epsilon=2.19307823802": {
+        "conditions": {
+          "all_copy_median_snr_below_1": true,
+          "dp_ndcg_lower_in_every_copy": false,
+          "mean_relative_ndcg_loss_at_least_50_percent": false
+        },
+        "noise_dominated_by_frozen_rule": false,
+        "mean_relative_ndcg_loss": 0.00015278762902544893
+      },
+      "epsilon=4": {
+        "conditions": {
+          "all_copy_median_snr_below_1": true,
+          "dp_ndcg_lower_in_every_copy": false,
+          "mean_relative_ndcg_loss_at_least_50_percent": false
+        },
+        "noise_dominated_by_frozen_rule": false,
+        "mean_relative_ndcg_loss": 8.803643912758119e-05
+      },
+      "epsilon=8": {
+        "conditions": {
+          "all_copy_median_snr_below_1": true,
+          "dp_ndcg_lower_in_every_copy": false,
+          "mean_relative_ndcg_loss_at_least_50_percent": false
+        },
+        "noise_dominated_by_frozen_rule": false,
+        "mean_relative_ndcg_loss": 0.00022407237114770626
+      }
+    },
+    "amazon_kindle": {
+      "epsilon=1": {
+        "conditions": {
+          "all_copy_median_snr_below_1": true,
+          "dp_ndcg_lower_in_every_copy": true,
+          "mean_relative_ndcg_loss_at_least_50_percent": true
+        },
+        "noise_dominated_by_frozen_rule": true,
+        "mean_relative_ndcg_loss": 0.83604229195848
+      },
+      "epsilon=2.19307823802": {
+        "conditions": {
+          "all_copy_median_snr_below_1": true,
+          "dp_ndcg_lower_in_every_copy": true,
+          "mean_relative_ndcg_loss_at_least_50_percent": true
+        },
+        "noise_dominated_by_frozen_rule": true,
+        "mean_relative_ndcg_loss": 0.7890211027153554
+      },
+      "epsilon=4": {
+        "conditions": {
+          "all_copy_median_snr_below_1": true,
+          "dp_ndcg_lower_in_every_copy": true,
+          "mean_relative_ndcg_loss_at_least_50_percent": true
+        },
+        "noise_dominated_by_frozen_rule": true,
+        "mean_relative_ndcg_loss": 0.7407987472803214
+      },
+      "epsilon=8": {
+        "conditions": {
+          "all_copy_median_snr_below_1": true,
+          "dp_ndcg_lower_in_every_copy": true,
+          "mean_relative_ndcg_loss_at_least_50_percent": true
+        },
+        "noise_dominated_by_frozen_rule": true,
+        "mean_relative_ndcg_loss": 0.6861749500649829
+      }
+    },
+    "netflix5k5k": {
+      "epsilon=1": {
+        "conditions": {
+          "all_copy_median_snr_below_1": true,
+          "dp_ndcg_lower_in_every_copy": true,
+          "mean_relative_ndcg_loss_at_least_50_percent": false
+        },
+        "noise_dominated_by_frozen_rule": false,
+        "mean_relative_ndcg_loss": 0.037060517050995036
+      },
+      "epsilon=2.19307823802": {
+        "conditions": {
+          "all_copy_median_snr_below_1": true,
+          "dp_ndcg_lower_in_every_copy": false,
+          "mean_relative_ndcg_loss_at_least_50_percent": false
+        },
+        "noise_dominated_by_frozen_rule": false,
+        "mean_relative_ndcg_loss": 0.004241907990172729
+      },
+      "epsilon=4": {
+        "conditions": {
+          "all_copy_median_snr_below_1": true,
+          "dp_ndcg_lower_in_every_copy": false,
+          "mean_relative_ndcg_loss_at_least_50_percent": false
+        },
+        "noise_dominated_by_frozen_rule": false,
+        "mean_relative_ndcg_loss": 6.604973089263666e-05
+      },
+      "epsilon=8": {
+        "conditions": {
+          "all_copy_median_snr_below_1": true,
+          "dp_ndcg_lower_in_every_copy": false,
+          "mean_relative_ndcg_loss_at_least_50_percent": false
+        },
+        "noise_dominated_by_frozen_rule": false,
+        "mean_relative_ndcg_loss": -0.0013010876856473323
+      }
+    }
+  },
+  "user_level_statistics_are_descriptive": true
+}

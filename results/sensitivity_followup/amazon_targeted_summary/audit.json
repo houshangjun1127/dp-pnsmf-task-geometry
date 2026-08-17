@@ -1,0 +1,123 @@
+{
+  "protocol": "AMAZON-LR-CUTOFF-SENSITIVITY-20260809-V1",
+  "learning_rate_runs": 12,
+  "cutoff_evaluations": 36,
+  "learning_rate_summary": [
+    {
+      "setting": "equalized_both_lr3",
+      "user_learning_rate": 3.0,
+      "item_learning_rate": 0.3,
+      "n_copies": 3,
+      "matched_mean": 0.002440996718463081,
+      "matched_sd": 5.5519698519272204e-05,
+      "dp_mean": 0.0017222143230444693,
+      "dp_sd": 0.0002095762209094267,
+      "paired_difference_mean": -0.0007187823954186119,
+      "paired_difference_sd": 0.0002581234935180741,
+      "relative_loss_percent_from_group_means": 29.446266354310257,
+      "copy_relative_loss_percent_mean": 29.31238699161186,
+      "all_copies_dp_below_matched": true
+    },
+    {
+      "setting": "reduced_item_only",
+      "user_learning_rate": 7.0,
+      "item_learning_rate": 0.3,
+      "n_copies": 3,
+      "matched_mean": 0.004345258912358404,
+      "matched_sd": 0.00034758690017339767,
+      "dp_mean": 0.0019486824345601441,
+      "dp_sd": 4.742029282420455e-05,
+      "paired_difference_mean": -0.0023965764777982607,
+      "paired_difference_sd": 0.00037747592087440614,
+      "relative_loss_percent_from_group_means": 55.153824573769995,
+      "copy_relative_loss_percent_mean": 54.92780882427701,
+      "all_copies_dp_below_matched": true
+    }
+  ],
+  "cutoff_summary": [
+    {
+      "dataset": "amazon_kindle",
+      "cutoff": 10,
+      "n_copies": 3,
+      "matched_mean": 0.01170402046837288,
+      "matched_sd": 0.0004079797292630792,
+      "dp_mean": 0.0022875185114297762,
+      "dp_sd": 0.00010008628883240736,
+      "paired_difference_mean": -0.009416501956943104,
+      "paired_difference_sd": 0.0004414897876677718,
+      "relative_loss_percent_from_group_means": 80.45527588053002,
+      "copy_relative_loss_percent_mean": 80.4352126203626,
+      "all_copies_dp_below_matched": true
+    },
+    {
+      "dataset": "ml1m",
+      "cutoff": 10,
+      "n_copies": 3,
+      "matched_mean": 0.27254592708059017,
+      "matched_sd": 0.0012224520003572352,
+      "dp_mean": 0.2730593517733069,
+      "dp_sd": 0.001459434619656564,
+      "paired_difference_mean": 0.0005134246927167574,
+      "paired_difference_sd": 0.00031130345742047153,
+      "relative_loss_percent_from_group_means": -0.1883809815895509,
+      "copy_relative_loss_percent_mean": -0.18814264938142103,
+      "all_copies_dp_below_matched": false
+    },
+    {
+      "dataset": "netflix5k5k",
+      "cutoff": 10,
+      "n_copies": 3,
+      "matched_mean": 0.17011367086561766,
+      "matched_sd": 0.0009755304062342633,
+      "dp_mean": 0.16872013807616507,
+      "dp_sd": 0.002421202824205744,
+      "paired_difference_mean": -0.0013935327894525524,
+      "paired_difference_sd": 0.0017931822808663635,
+      "relative_loss_percent_from_group_means": 0.8191774255188575,
+      "copy_relative_loss_percent_mean": 0.821159285869876,
+      "all_copies_dp_below_matched": false
+    },
+    {
+      "dataset": "amazon_kindle",
+      "cutoff": 20,
+      "n_copies": 3,
+      "matched_mean": 0.012652898201759043,
+      "matched_sd": 0.00030725709544374553,
+      "dp_mean": 0.0026692836864165045,
+      "dp_sd": 7.480251976160946e-05,
+      "paired_difference_mean": -0.00998361451534254,
+      "paired_difference_sd": 0.0002619620730126139,
+      "relative_loss_percent_from_group_means": 78.90377647987863,
+      "copy_relative_loss_percent_mean": 78.90211027153555,
+      "all_copies_dp_below_matched": true
+    },
+    {
+      "dataset": "ml1m",
+      "cutoff": 20,
+      "n_copies": 3,
+      "matched_mean": 0.2596451451975606,
+      "matched_sd": 0.0006161531479229353,
+      "dp_mean": 0.25960528376874853,
+      "dp_sd": 0.0006826993885897648,
+      "paired_difference_mean": -3.986142881214535e-05,
+      "paired_difference_sd": 0.0004854870368344945,
+      "relative_loss_percent_from_group_means": 0.015352271956304552,
+      "copy_relative_loss_percent_mean": 0.015278762902542412,
+      "all_copies_dp_below_matched": false
+    },
+    {
+      "dataset": "netflix5k5k",
+      "cutoff": 20,
+      "n_copies": 3,
+      "matched_mean": 0.16872037594157008,
+      "matched_sd": 0.0017093821684622593,
+      "dp_mean": 0.16801200173185757,
+      "dp_sd": 0.003782513038644022,
+      "paired_difference_mean": -0.0007083742097125182,
+      "paired_difference_sd": 0.0027846743350784455,
+      "relative_loss_percent_from_group_means": 0.4198510142946976,
+      "copy_relative_loss_percent_mean": 0.4241907990172746,
+      "all_copies_dp_below_matched": false
+    }
+  ]
+}

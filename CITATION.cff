@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use these reproducibility materials, please cite this software archive and the associated article."
+title: "Reproducibility materials for Task Geometry in Full-Catalog User-Level DP Federated Recommendation"
+type: software
+version: 0.1.0
+license: MIT
+authors:
+  - family-names: "Hou"
+    given-names: "Shangjun"
+    affiliation: "School of Information Science and Technology, Dalian University of Science and Technology, Dalian, China"
+    email: "houshangjun@dlust.edu.cn"
+  - family-names: "Cao"
+    given-names: "Ruixia"
+    affiliation: "School of Applied Technology, Dalian Neusoft University of Information, Dalian, China"
+keywords:
+  - "federated recommendation"
+  - "implicit feedback"
+  - "matrix factorization"
+  - "user-level differential privacy"
+  - "task geometry"
+  - "reproducibility"
+abstract: >-
+  Code, frozen experiment configurations, environment specifications, run-level
+  machine-readable results, task-geometry summaries, and tests
+  supporting a paired audit of full-catalog user-level differentially private federated
+  recommendation. Third-party benchmark data are not redistributed.

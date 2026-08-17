@@ -1,0 +1,45 @@
+{
+  "protocol_id": "CONF-QSPACE-20260802-V1",
+  "number_of_runs": 27,
+  "independent_unit": "fixed_dataset_copy",
+  "copies_per_dataset": 3,
+  "privacy": {
+    "epsilon_values": [
+      2.193078238018666
+    ],
+    "delta": 1e-05
+  },
+  "decisions": {
+    "amazon_kindle": {
+      "conditions": {
+        "all_copy_median_snr_below_1": true,
+        "dp_ndcg_lower_in_every_copy": true,
+        "mean_relative_ndcg_loss_at_least_50_percent": true
+      },
+      "noise_dominated_by_frozen_rule": true,
+      "mean_dp_minus_matched_ndcg_at_20": -0.00998361451534254,
+      "mean_relative_loss": 0.7890211027153554
+    },
+    "ml1m": {
+      "conditions": {
+        "all_copy_median_snr_below_1": true,
+        "dp_ndcg_lower_in_every_copy": false,
+        "mean_relative_ndcg_loss_at_least_50_percent": false
+      },
+      "noise_dominated_by_frozen_rule": false,
+      "mean_dp_minus_matched_ndcg_at_20": -3.986142881214535e-05,
+      "mean_relative_loss": 0.00015278762902544893
+    },
+    "netflix5k5k": {
+      "conditions": {
+        "all_copy_median_snr_below_1": true,
+        "dp_ndcg_lower_in_every_copy": false,
+        "mean_relative_ndcg_loss_at_least_50_percent": false
+      },
+      "noise_dominated_by_frozen_rule": false,
+      "mean_dp_minus_matched_ndcg_at_20": -0.0007083742097125182,
+      "mean_relative_loss": 0.004241907990172729
+    }
+  },
+  "no_null_primary_metrics": true
+}

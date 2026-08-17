@@ -1,0 +1,76 @@
+protocol_id: CONF-QSPACE-20260802-V1
+frozen_at: 2026-08-02T22:30:00+08:00
+purpose: Confirm the query-space feasibility boundary after all algorithm selection and diagnostic tuning stopped.
+
+datasets:
+  development_confirmation:
+    - ml1m
+    - amazon_kindle
+  external_validation:
+    - netflix5k5k
+  copies: [1, 2, 3]
+  seeds_by_copy:
+    1: 20260821
+    2: 20260822
+    3: 20260823
+
+common:
+  rounds: 200
+  embedding_dim: 20
+  user_learning_rate: published_P_NSMF_BGD_value_for_each_dataset
+  item_learning_rate: one_tenth_of_published_P_NSMF_BGD_value
+  learning_rate_decay: 0.999
+  contribution_space: direct_item_gradient
+  contribution_rule: clip
+  evaluation_target: test
+  cutoff: 20
+  evaluation_every: 50
+  delta: 1.0e-5
+  strata: training_activity_quintiles_and_training_mass_item_tertiles
+
+arms:
+  reference_full_nonprivate:
+    sampling_probability: 1.0
+    clip_norm: 1.0e9
+    noise_multiplier: 0.0
+    interpretation: Objective-and-implementation learnability reference; not private.
+  matched_clip_no_noise:
+    sampling_probability: 0.1
+    clip_norm: 1.0
+    noise_multiplier: 0.0
+    interpretation: Isolates subsampling and clipping; not private.
+  user_dp_full_catalog:
+    sampling_probability: 0.1
+    clip_norm: 1.0
+    noise_multiplier: 3.0
+    interpretation: Poisson-sampled Gaussian user-level DP arm.
+
+primary_outcomes:
+  - ndcg_at_20_final
+  - recall_at_20_final
+  - released_item_signal_to_noise_ratio_median_over_rounds
+  - pre_clip_rate_mean_over_rounds
+
+comparisons:
+  - user_dp_full_catalog_minus_matched_clip_no_noise
+  - matched_clip_no_noise_minus_reference_full_nonprivate
+
+independent_unit: fixed_dataset_copy
+reporting:
+  - paired_copy_level_effects
+  - mean_standard_deviation_minimum_maximum
+  - no_significance_claim_with_only_three_copies
+  - exact_privacy_epsilon_from_the_frozen_RDP_accountant
+
+decision_rule:
+  noise_dominated: >-
+    The DP arm is called noise-dominated only when all three conditions hold:
+    (i) its median released SNR is below 1, (ii) its final NDCG@20 is lower than
+    the matched no-noise arm in every fixed copy, and (iii) its mean relative
+    NDCG@20 loss versus the matched arm is at least 50%.
+
+limitations_fixed_before_run:
+  - MovieLens-1M and Amazon tests were inspected during development and are not pristine holdouts.
+  - Netflix-5K5K is the external validation set for this frozen rule.
+  - Three fixed copies support paired descriptive inference, not strong population-level hypothesis testing.
+  - The protocol does not establish impossibility outside full-catalog isotropic Gaussian releases.
