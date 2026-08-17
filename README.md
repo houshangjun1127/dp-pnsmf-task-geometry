@@ -2,13 +2,6 @@
 
 This repository contains the minimum computational materials needed to inspect and rerun the analyses reported in the associated study: implementation code, frozen configurations, environment specifications, tests, and machine-readable result summaries.
 
-## Authors
-
-**Shangjun Hou**1,* and **Ruixia Cao**2
-
-1School of Information Science and Technology, Dalian University of Science and Technology, Dalian, China<br>
-2School of Applied Technology, Dalian Neusoft University of Information, Dalian, China<br>
-*Corresponding author: Shangjun Hou, houshangjun@dlust.edu.cn
 
 ## Contents
 
@@ -65,9 +58,7 @@ The latter analyses were designed after the main results had been inspected. The
 
 Citation metadata are provided in `CITATION.cff`.
 
-- Repository URL: **to be added after repository creation**
-- Versioned Zenodo DOI: **to be added after release archiving**
-- Article DOI: **to be added after journal assignment**
-- Software license: **MIT**
+- Repository URL: https://github.com/houshangjun1127/dp-pnsmf-task-geometry
+- Software license: MIT
 
 The authors' original code and documentation are released under the MIT License. Third-party datasets are not included or relicensed, and external software dependencies remain subject to their respective licenses.
