@@ -1,19 +1,19 @@
-# Reproduction Guide
+# Reproduction guide
 
 ## 1. Scope
 
-This guide distinguishes verification from full reproduction. The archived derived results permit direct checking of manuscript values. Full retraining requires the original benchmark files, which are not redistributed here.
+The archived summaries support direct checking of reported values. Full retraining requires the fixed benchmark files, which are not redistributed. Raw per-run histories are intentionally excluded from this minimal GitHub update.
 
-## 2. Environment reconstruction
+## 2. Environment
 
-Preferred exact reconstruction:
+Preferred reconstruction:
 
 ```powershell
 conda create --name dp-pnsmf-repro --file configs/conda-explicit-lock.txt
 conda activate dp-pnsmf-repro
 ```
 
-Fallback package reconstruction:
+Fallback reconstruction:
 
 ```powershell
 python -m venv .venv
@@ -21,74 +21,66 @@ python -m venv .venv
 python -m pip install -r configs/requirements-lock.txt
 ```
 
-An exact conda lock may contain platform-specific build URLs. If reconstruction fails on another operating system, create Python 3.11 and install the pinned requirements, then document the deviation.
-
 ## 3. Dataset preparation
 
-1. Read `data/DATASET_MANIFEST.md`.
-2. Obtain each dataset from an authorized source.
-3. Do not substitute another MovieLens release, Amazon category snapshot, or Netflix preprocessing without reporting the change.
-4. Verify source filenames, record counts, and available checksums.
-5. Apply the archived preprocessing code and fixed-copy protocol.
+Obtain authorized copies of the fixed inputs listed in `data/DATASET_MANIFEST.md`. The revision runners accept a data root containing:
 
-The experiment launchers expect authorized local copies under `references/vendor/P-NSMF-upstream/data/`. Exact subdirectory and file names are listed in `data/DATASET_MANIFEST.md`. These data paths are excluded from Git tracking.
+```text
+PATH_TO_DATA_ROOT/
+  ML1M-TXT-FORMAT/
+  Amazon_Kindle_Store-TXT-FORMAT/
+  Netflix5K5K-TXT-FORAMT/
+```
 
-At freeze, the acquisition and redistribution chain for the fixed Amazon Kindle and Netflix-5K5K files is not sufficiently established for public redistribution. This is a release blocker for the files, not a license to reconstruct or substitute data silently.
+Do not commit the interaction files. Verify the audited Amazon Kindle and Netflix-5K5K inputs against `data/UPSTREAM_FILE_HASHES.sha256` where applicable.
 
-## 4. Software verification
+## 4. Tests
 
-From the archive root:
+From the repository root, run:
 
-```powershell
+```text
 python -m pytest -q
 ```
 
-The pruned public-repository suite contains 88 tests, all of which passed on 17 August 2026 in the existing local scientific environment. Tests verify retained implementation components; they do not by themselves reproduce manuscript results or validate third-party data provenance.
+The merged v0.3.0 update passed the retained test suite on 10 September 2026 in the existing local scientific environment.
 
-## 5. Main experimental stages
+## 5. Revision analyses
 
-### Frozen main batch
+### Shared-seed robustness, sensitivity, and convergence
 
-- Configuration: `configs/confirmatory_query_feasibility_v1.0.yaml`
-- Launcher: `scripts/run_confirmatory_query_feasibility.py`
-- Summarizer: `scripts/summarize_confirmatory_query_feasibility.py`
-- Archived output: `results/main_batch/`
+```text
+python -m scripts.run_review_revision_robustness_protocol --data-root PATH_TO_DATA_ROOT --result-dir NEW_RESULT_DIRECTORY --phase all --workers 4
+```
 
-### Post-result mechanism analysis
+Use a new result directory. The frozen protocols are `configs/review_revision_sensitivity_uncertainty_v2.0.yaml` and `configs/review_completion_20260907_v2.1.yaml`. Archived summary files are under `results/revision_v2/robustness/`.
 
-- Configuration: `configs/task_geometry_budget_analysis_v1.0.yaml`
-- Launcher: `scripts/run_task_geometry_budget_analysis.py`
-- Summarizer: `scripts/summarize_task_geometry_budget_analysis.py`
-- Archived output: `results/mechanism_followup/`
+### DPALS-style stress test
 
-### Result-dependent sensitivity analyses
+```text
+python -m scripts.run_review_revision_dpals_protocol --data-dir PATH_TO_DATA_ROOT/ML1M-TXT-FORMAT --result-dir NEW_DPALS_DIRECTORY --phase all
+```
 
-- Configurations: `configs/cross_dataset_lr_cutoff_sensitivity_v1.0.yaml` and `configs/amazon_lr_cutoff_sensitivity_v1.0.yaml`
-- Launchers: `scripts/run_cross_dataset_lr_cutoff_sensitivity.py` and `scripts/run_amazon_lr_cutoff_sensitivity.py`
-- Summarizers: `scripts/summarize_cross_dataset_lr_cutoff_sensitivity.py` and `scripts/summarize_amazon_lr_cutoff_sensitivity.py`
-- Archived output: `results/sensitivity_followup/`
+This is an implementation-specific stress test, not a reproduction of a published Private ALS system and not a superiority comparison. The selected validation setting and copy-level test summary are under `results/revision_v2/dpals/`.
 
-The last two stages were formulated after earlier results had been inspected. Their protocols were fixed before the corresponding follow-up runs, but their findings are robustness, sensitivity, and bounded mechanism evidence rather than independent confirmation.
+### Netflix-5K5K provenance
 
-## 6. Privacy accounting
+```text
+python -m scripts.audit_netflix5k5k_provenance --data-dir PATH_TO_DATA_ROOT/Netflix5K5K-TXT-FORAMT --output NEW_MANIFEST.json
+```
 
-Use `scripts/audit_privacy_accounting.py` and the accountant interfaces in `src/`. The manuscript retains the more conservative frozen value when independent accountant outputs differ. Any re-run must report the accountant implementation, Rényi-order grid, sampling probability, number of rounds, noise multiplier, and delta.
+The archived records contain source information, counts, and hashes only. They do not contain user-item interactions.
 
-## 7. Tables and reported values
+### Objective-inflation check
 
-The minimal repository retains the run-level machine-readable tables and aggregated summaries used to check the manuscript values. Rendered figures and plotting scripts are intentionally excluded because they are not required to rerun the experimental protocols or inspect the reported numerical results.
+```text
+python -m scripts.validate_objective_inflation_real_states --help
+```
 
-## 8. Expected resources
+The corresponding summary is `results/revision_v2/theory_validation/objective_inflation_real_states.json`.
 
-The original experiments were CPU runs. Exact wall-clock time depends on data access, operating system, BLAS implementation, and whether the full 200-round matrices or only smoke runs are executed. Before public release, benchmark one representative main-batch run and one geometry run in a clean environment and record time, peak memory, and disk use.
+## 6. Interpretation limits
 
-## 9. Acceptable reproduction claims
-
-- Derived numerical audit: supported by the archived summaries.
-- Figure regeneration: intended and should be rechecked before release.
-- Full computational reproduction: conditional on lawful access to matching benchmark files and successful environment reconstruction.
-- Independent replication on alternative datasets: not provided by this archive.
-
-## 10. Repository and citation metadata
-
- The authors' original code and documentation are released under the MIT License; this license does not relicense third-party datasets or external dependencies. 
+- The three fixed copies are not independent samples from a wider recommendation-domain population.
+- Shared-seed intervals quantify algorithmic variation conditional on the fixed copies.
+- Full reproduction depends on lawful access to matching benchmark files and on the recorded software environment.
+- The archive does not establish competitive private recommendation performance or general impossibility outside the declared mechanism and operating points.

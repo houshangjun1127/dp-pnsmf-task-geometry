@@ -1,0 +1,96 @@
+{
+  "status": "reviewer_requested_dpals_style_baseline_summary",
+  "protocol_id": "REVIEW-REVISION-DPALS-ML1M-20260831-V2",
+  "selected_validation_configuration": {
+    "label": "k50_T10_Gu1p0_lambda00p1",
+    "interaction_cap": 50,
+    "rounds": 10,
+    "user_clip_radius": 1.0,
+    "implicit_penalty": 0.1,
+    "regularization": 0.01,
+    "validation_ndcg@20": 0.08601501498990512,
+    "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k50_T10_Gu1p0_lambda00p1.json"
+  },
+  "privacy_target": {
+    "epsilon": 2.193078238018666,
+    "delta": 1e-05
+  },
+  "copy_results": [
+    {
+      "copy": 1,
+      "seed": 20260911,
+      "matched_ndcg@20": 0.3986188281441623,
+      "private_ndcg@20": 0.017723949310988692,
+      "private_minus_matched": -0.3808948788331736,
+      "relative_loss_percent": 95.55365977229286,
+      "epsilon": 2.193078237989834,
+      "noise_multiplier": 44.72017402151768,
+      "matched_result": "results\\revision_v2\\dpals\\test\\ml1m_copy1_matched_no_noise_seed20260911.json",
+      "private_result": "results\\revision_v2\\dpals\\test\\ml1m_copy1_private_seed20260911.json"
+    },
+    {
+      "copy": 2,
+      "seed": 20260912,
+      "matched_ndcg@20": 0.39832152726804626,
+      "private_ndcg@20": 0.005917621409260317,
+      "private_minus_matched": -0.39240390585878593,
+      "relative_loss_percent": 98.5143606347748,
+      "epsilon": 2.193078237989834,
+      "noise_multiplier": 44.72017402151768,
+      "matched_result": "results\\revision_v2\\dpals\\test\\ml1m_copy2_matched_no_noise_seed20260912.json",
+      "private_result": "results\\revision_v2\\dpals\\test\\ml1m_copy2_private_seed20260912.json"
+    },
+    {
+      "copy": 3,
+      "seed": 20260913,
+      "matched_ndcg@20": 0.3957188131606962,
+      "private_ndcg@20": 0.013016152744152288,
+      "private_minus_matched": -0.3827026604165439,
+      "relative_loss_percent": 96.71075715602467,
+      "epsilon": 2.193078237989834,
+      "noise_multiplier": 44.72017402151768,
+      "matched_result": "results\\revision_v2\\dpals\\test\\ml1m_copy3_matched_no_noise_seed20260913.json",
+      "private_result": "results\\revision_v2\\dpals\\test\\ml1m_copy3_private_seed20260913.json"
+    }
+  ],
+  "descriptive_summary": {
+    "matched_ndcg@20": {
+      "mean": 0.39755305619096826,
+      "sample_sd": 0.0015954411845351905,
+      "values": [
+        0.3986188281441623,
+        0.39832152726804626,
+        0.3957188131606962
+      ]
+    },
+    "private_ndcg@20": {
+      "mean": 0.012219241154800432,
+      "sample_sd": 0.005943369893563328,
+      "values": [
+        0.017723949310988692,
+        0.005917621409260317,
+        0.013016152744152288
+      ]
+    },
+    "private_minus_matched": {
+      "mean": -0.3853338150361678,
+      "sample_sd": 0.006189237169744351,
+      "values": [
+        -0.3808948788331736,
+        -0.39240390585878593,
+        -0.3827026604165439
+      ]
+    },
+    "relative_loss_percent": {
+      "mean": 96.92625918769744,
+      "sample_sd": 1.492068444648787,
+      "values": [
+        95.55365977229286,
+        98.5143606347748,
+        96.71075715602467
+      ]
+    }
+  },
+  "inference": "descriptive across three fixed non-independent copies",
+  "comparison_limit": "mechanism calibration, not a superiority test"
+}

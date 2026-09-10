@@ -1,0 +1,75 @@
+protocol_id: REVIEW-REVISION-SENSITIVITY-UNCERTAINTY-20260831-V2
+frozen_at: 2026-08-31T09:15:00+08:00
+study_phase: reviewer_requested_post_decision_robustness
+datasets: [ml1m, amazon_kindle, netflix5k5k]
+copies: [1, 2, 3]
+
+base_configuration:
+  rounds: 200
+  embedding_dim: 20
+  sampling_probability: 0.1
+  clip_norm: 1.0
+  noise_multiplier: 3.0
+  delta: 1.0e-5
+  user_learning_rate: published_P_NSMF_BGD_value_for_each_dataset
+  item_learning_rate: one_tenth_user_rate
+  learning_rate_decay: 0.999
+  contribution_space: direct_item_gradient
+  contribution_rule: clip
+  evaluation_target: test
+  cutoff: 20
+  seen_mask: train_file_only
+
+algorithmic_seed_study:
+  seeds: [20260901, 20260902, 20260903, 20260904, 20260905, 20260906, 20260907, 20260908, 20260909, 20260910]
+  paired_arms: [matched_clip_no_noise, user_dp_full_catalog]
+  pairing: same_initialization_and_poisson_client_samples_within_seed_copy_dataset
+  primary_effect: dp_minus_matched_final_ndcg_at_20
+  uncertainty: >-
+    Percentile bootstrap over seeds within each fixed copy, followed by an
+    equal-weight average over the three fixed copies; 10000 replicates with
+    bootstrap seed 20260930. This interval quantifies algorithmic randomness
+    conditional on the fixed copies and is not a dataset-population interval.
+
+one_factor_sensitivity:
+  seed_by_copy: {1: 20260921, 2: 20260922, 3: 20260923}
+  paired_arms: [matched_clip_no_noise, user_dp_full_catalog]
+  configurations:
+    - {label: d10_C1, embedding_dim: 10, clip_norm: 1.0}
+    - {label: d20_C0p5, embedding_dim: 20, clip_norm: 0.5}
+    - {label: d20_C1, embedding_dim: 20, clip_norm: 1.0}
+    - {label: d20_C2, embedding_dim: 20, clip_norm: 2.0}
+    - {label: d40_C1, embedding_dim: 40, clip_norm: 1.0}
+  interpretation: local_one_factor_robustness_only
+
+learning_rate_convergence:
+  seeds_by_copy: {1: 20260924, 2: 20260925, 3: 20260926}
+  rate_pairs:
+    published:
+      ml1m: [3.0, 0.3]
+      amazon_kindle: [7.0, 0.7]
+      netflix5k5k: [2.4, 0.24]
+    common_low: [3.0, 0.3]
+  paired_arms: [matched_clip_no_noise, user_dp_full_catalog]
+  evaluation_every: 10
+  logged_diagnostics: [weighted_training_objective, ndcg_at_20, factor_norms]
+  extension_trigger: >-
+    Extend only the matched no-noise configuration from 200 to 800 rounds when
+    NDCG@20 improves by more than 5 percent relative from round 150 to 200 or
+    the normalized training objective decreases by more than 1 percent.
+  extension_interpretation: optimization_diagnostic_not_same_budget_private_result
+
+theory_validation:
+  monte_carlo_draws: 1000
+  seed: 20260931
+  target: fixed_user_item_quadratic_subproblem
+  compare:
+    - analytic_expected_conditional_loss_inflation
+    - empirical_mean_loss_inflation
+  tolerance_relative_error: 0.05
+
+reporting_limits:
+  - fixed_copies_are_not_independent_samples
+  - sensitivity_grid_does_not_cover_q_or_T
+  - no_causal_dataset_attribute_claims
+  - all_tests_are_post_decision_robustness_checks

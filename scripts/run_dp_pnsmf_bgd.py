@@ -20,7 +20,7 @@ from src.data import (
     rotating_pnsmf_user_interactions,
 )
 from src.evaluation import evaluate_pnsmf_factors, evaluate_pnsmf_factors_by_strata
-from src.models import item_subproblem_hessian_trace
+from src.models import item_subproblem_hessian_trace, weighted_nsmf_loss_indexed
 from src.privacy import (
     RdpPrivacyConfig,
     compute_epsilon,
@@ -87,6 +87,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--evaluation-every", type=int, default=1)
     parser.add_argument("--evaluation-target", choices=("validation", "test"), default="validation")
     parser.add_argument("--cutoff", type=int, default=5)
+    parser.add_argument("--torch-threads", type=int, default=4)
     parser.add_argument("--report-strata", action="store_true")
     parser.add_argument(
         "--popularity-strata",
@@ -96,7 +97,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--clip-source", type=str, required=True)
     parser.add_argument(
         "--study-phase",
-        choices=("diagnostic", "confirmatory", "post_result_analysis"),
+        choices=("diagnostic", "confirmatory", "registered_followup"),
         default="diagnostic",
         help="Evidence label. Confirmatory runs require a frozen, public clip source.",
     )
@@ -150,7 +151,9 @@ def main() -> None:
     np_rng = np.random.default_rng(args.seed)
     noise_generator = torch.Generator().manual_seed(args.seed + 1)
     torch.manual_seed(args.seed)
-    torch.set_num_threads(4)
+    if args.torch_threads <= 0:
+        raise ValueError("torch_threads must be positive.")
+    torch.set_num_threads(args.torch_threads)
     data_dir = args.data_dir
     dataset_spec = get_pnsmf_fixed_dataset_spec(args.dataset)
     if args.learning_rate is None:
@@ -169,6 +172,8 @@ def main() -> None:
     )
     train_users = torch.as_tensor(data.train_users, dtype=torch.long)
     train_items = torch.as_tensor(data.train_items, dtype=torch.long)
+    objective_train_users = train_users
+    objective_train_items = train_items
     public_order_by_user = (
         build_pnsmf_public_interaction_order(
             data.train_users,
@@ -196,6 +201,17 @@ def main() -> None:
     history = []
 
     def evaluate(round_index: int) -> None:
+        normalized_objective = float(
+            weighted_nsmf_loss_indexed(
+                users,
+                items,
+                objective_train_users,
+                objective_train_items,
+                omega=args.omega,
+                regularization=args.regularization,
+            )
+            / data.num_users
+        )
         if args.report_strata:
             grouped = evaluate_pnsmf_factors_by_strata(
                 users,
@@ -209,6 +225,7 @@ def main() -> None:
             history.append(
                 {
                     "round": round_index,
+                    "normalized_training_objective": normalized_objective,
                     "metrics": grouped["overall"],
                     "strata": {
                         key: value
@@ -220,6 +237,7 @@ def main() -> None:
         else:
             history.append({
                 "round": round_index,
+                "normalized_training_objective": normalized_objective,
                 "metrics": evaluate_pnsmf_factors(
                     users, items, targets, data.train_by_user, cutoff=args.cutoff
                 ),
@@ -430,10 +448,10 @@ def main() -> None:
             if args.study_phase == "confirmatory" and args.noise_multiplier > 0.0
             else "confirmatory_control_not_private"
             if args.study_phase == "confirmatory"
-            else "post_result_analysis_user_level_dp_result"
-            if args.study_phase == "post_result_analysis" and args.noise_multiplier > 0.0
-            else "post_result_analysis_control_not_private"
-            if args.study_phase == "post_result_analysis"
+            else "registered_followup_user_level_dp_result"
+            if args.study_phase == "registered_followup" and args.noise_multiplier > 0.0
+            else "registered_followup_control_not_private"
+            if args.study_phase == "registered_followup"
             else "dp_smoke_test_not_a_paper_result"
             if args.noise_multiplier > 0.0
             else "paired_clipping_without_noise_not_private"

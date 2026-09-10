@@ -1,0 +1,33 @@
+protocol_id: REVIEW-COMPLETION-20260907-V2.1
+date: 2026-09-07
+status: specified_before_additional_runs
+parent_protocol: REVIEW-REVISION-SENSITIVITY-UNCERTAINTY-20260831-V2
+purpose: correct_analysis_and_complete_existing_learning_rate_coverage
+original_protocol_retained: configs/review_revision_sensitivity_uncertainty_v2.0.yaml
+history_backup: tmp/revision_20260907/originals
+shared_seed_analysis_correction:
+  resampling_unit: seed_block_shared_across_all_three_fixed_copies
+  seed_blocks: 10
+  replicates: 10000
+  rng_seed_per_dataset: 20260930
+  interval: percentile_2.5_97.5
+  weighting: equal_copy_then_equal_seed
+  scope: algorithmic_uncertainty_conditional_on_fixed_copies
+  new_training_runs: false
+convergence_completion:
+  added_pairs:
+    ml1m: [7.0, 0.7]
+    amazon_kindle: [7.0, 0.3]
+    netflix5k5k: [7.0, 0.7]
+  seeds_by_copy: {1: 20260924, 2: 20260925, 3: 20260926}
+  all_other_settings: inherited_unchanged_from_parent_protocol
+  paired_arms: [matched_clip_no_noise, user_dp_full_catalog]
+  rounds: 200
+  evaluation_every: 10
+  additional_paired_runs: 18
+  extension_rule: matched_arm_NDCG_gain_over_5pct_OR_objective_drop_over_1pct_from_round_150_to_200
+  extension_rounds: 800
+  extension_evaluation_every: 50
+  total_unique_dataset_rate_copy_conditions: 24
+  interpretation: post_result_optimization_diagnostic_not_prospective_confirmation
+  private_extensions: false

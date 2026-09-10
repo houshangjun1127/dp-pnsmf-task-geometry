@@ -1,0 +1,178 @@
+{
+  "protocol_id": "REVIEW-REVISION-DPALS-ML1M-20260831-V2",
+  "selection_data": "MovieLens-1M copy 1 validation only",
+  "selection_arm": "matched DPALS-style no-noise",
+  "selection_rule": "max NDCG@20; then smaller k*T; then smaller T; then lexical label",
+  "selected": {
+    "label": "k50_T10_Gu1p0_lambda00p1",
+    "interaction_cap": 50,
+    "rounds": 10,
+    "user_clip_radius": 1.0,
+    "implicit_penalty": 0.1,
+    "regularization": 0.01,
+    "validation_ndcg@20": 0.08601501498990512,
+    "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k50_T10_Gu1p0_lambda00p1.json"
+  },
+  "candidates_ranked": [
+    {
+      "label": "k50_T10_Gu1p0_lambda00p1",
+      "interaction_cap": 50,
+      "rounds": 10,
+      "user_clip_radius": 1.0,
+      "implicit_penalty": 0.1,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.08601501498990512,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k50_T10_Gu1p0_lambda00p1.json"
+    },
+    {
+      "label": "k50_T10_Gu0p5_lambda00p1",
+      "interaction_cap": 50,
+      "rounds": 10,
+      "user_clip_radius": 0.5,
+      "implicit_penalty": 0.1,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.0859990442182811,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k50_T10_Gu0p5_lambda00p1.json"
+    },
+    {
+      "label": "k20_T10_Gu0p5_lambda00p1",
+      "interaction_cap": 20,
+      "rounds": 10,
+      "user_clip_radius": 0.5,
+      "implicit_penalty": 0.1,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.08421352305851679,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k20_T10_Gu0p5_lambda00p1.json"
+    },
+    {
+      "label": "k20_T10_Gu1p0_lambda00p1",
+      "interaction_cap": 20,
+      "rounds": 10,
+      "user_clip_radius": 1.0,
+      "implicit_penalty": 0.1,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.08411874892044695,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k20_T10_Gu1p0_lambda00p1.json"
+    },
+    {
+      "label": "k50_T5_Gu1p0_lambda00p1",
+      "interaction_cap": 50,
+      "rounds": 5,
+      "user_clip_radius": 1.0,
+      "implicit_penalty": 0.1,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.08233634752168312,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k50_T5_Gu1p0_lambda00p1.json"
+    },
+    {
+      "label": "k50_T5_Gu0p5_lambda00p1",
+      "interaction_cap": 50,
+      "rounds": 5,
+      "user_clip_radius": 0.5,
+      "implicit_penalty": 0.1,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.08227056988838576,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k50_T5_Gu0p5_lambda00p1.json"
+    },
+    {
+      "label": "k20_T5_Gu1p0_lambda00p1",
+      "interaction_cap": 20,
+      "rounds": 5,
+      "user_clip_radius": 1.0,
+      "implicit_penalty": 0.1,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.08136238344771352,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k20_T5_Gu1p0_lambda00p1.json"
+    },
+    {
+      "label": "k20_T5_Gu0p5_lambda00p1",
+      "interaction_cap": 20,
+      "rounds": 5,
+      "user_clip_radius": 0.5,
+      "implicit_penalty": 0.1,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.08133052048630647,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k20_T5_Gu0p5_lambda00p1.json"
+    },
+    {
+      "label": "k20_T5_Gu1p0_lambda00p01",
+      "interaction_cap": 20,
+      "rounds": 5,
+      "user_clip_radius": 1.0,
+      "implicit_penalty": 0.01,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.07242561002784263,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k20_T5_Gu1p0_lambda00p01.json"
+    },
+    {
+      "label": "k20_T5_Gu0p5_lambda00p01",
+      "interaction_cap": 20,
+      "rounds": 5,
+      "user_clip_radius": 0.5,
+      "implicit_penalty": 0.01,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.07216529150235594,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k20_T5_Gu0p5_lambda00p01.json"
+    },
+    {
+      "label": "k20_T10_Gu1p0_lambda00p01",
+      "interaction_cap": 20,
+      "rounds": 10,
+      "user_clip_radius": 1.0,
+      "implicit_penalty": 0.01,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.07189736302369988,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k20_T10_Gu1p0_lambda00p01.json"
+    },
+    {
+      "label": "k20_T10_Gu0p5_lambda00p01",
+      "interaction_cap": 20,
+      "rounds": 10,
+      "user_clip_radius": 0.5,
+      "implicit_penalty": 0.01,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.07169460275323189,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k20_T10_Gu0p5_lambda00p01.json"
+    },
+    {
+      "label": "k50_T10_Gu1p0_lambda00p01",
+      "interaction_cap": 50,
+      "rounds": 10,
+      "user_clip_radius": 1.0,
+      "implicit_penalty": 0.01,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.07162919581613313,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k50_T10_Gu1p0_lambda00p01.json"
+    },
+    {
+      "label": "k50_T10_Gu0p5_lambda00p01",
+      "interaction_cap": 50,
+      "rounds": 10,
+      "user_clip_radius": 0.5,
+      "implicit_penalty": 0.01,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.07159374473000635,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k50_T10_Gu0p5_lambda00p01.json"
+    },
+    {
+      "label": "k50_T5_Gu0p5_lambda00p01",
+      "interaction_cap": 50,
+      "rounds": 5,
+      "user_clip_radius": 0.5,
+      "implicit_penalty": 0.01,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.06972961877308378,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k50_T5_Gu0p5_lambda00p01.json"
+    },
+    {
+      "label": "k50_T5_Gu1p0_lambda00p01",
+      "interaction_cap": 50,
+      "rounds": 5,
+      "user_clip_radius": 1.0,
+      "implicit_penalty": 0.01,
+      "regularization": 0.01,
+      "validation_ndcg@20": 0.06938078158355061,
+      "result_file": "results\\revision_v2\\dpals\\validation_tuning\\k50_T5_Gu1p0_lambda00p01.json"
+    }
+  ]
+}

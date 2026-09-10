@@ -1,0 +1,143 @@
+{
+  "conditions": 24,
+  "extended_conditions": 17,
+  "extended_prefixes_identical_at_common_checkpoints": true,
+  "rows": [
+    {
+      "dataset": "ml1m",
+      "rate_label": "published",
+      "user_lr": 3.0,
+      "item_lr": 0.3,
+      "matched_ndcg200": 0.25933569926379163,
+      "dp_ndcg200": 0.2589583655553131,
+      "ndcg_gain150_200_percent_range": [
+        -0.23214699911670494,
+        -0.12320547658261928
+      ],
+      "objective_drop150_200_percent_range": [
+        2.894953463165988,
+        3.0013707016775957
+      ],
+      "extended_copies": 3
+    },
+    {
+      "dataset": "ml1m",
+      "rate_label": "common_high",
+      "user_lr": 7.0,
+      "item_lr": 0.7,
+      "matched_ndcg200": 0.2582245830644809,
+      "dp_ndcg200": 0.2586837847913743,
+      "ndcg_gain150_200_percent_range": [
+        -0.29915649536632494,
+        0.13282563470225112
+      ],
+      "objective_drop150_200_percent_range": [
+        -0.08810830619496428,
+        -0.008992973806235378
+      ],
+      "extended_copies": 0
+    },
+    {
+      "dataset": "amazon_kindle",
+      "rate_label": "published",
+      "user_lr": 7.0,
+      "item_lr": 0.7,
+      "matched_ndcg200": 0.012539693465199538,
+      "dp_ndcg200": 0.002614124481687356,
+      "ndcg_gain150_200_percent_range": [
+        73.9075949392872,
+        83.70772802029339
+      ],
+      "objective_drop150_200_percent_range": [
+        0.010198199884951938,
+        0.011156095008575208
+      ],
+      "extended_copies": 3
+    },
+    {
+      "dataset": "amazon_kindle",
+      "rate_label": "common_low",
+      "user_lr": 3.0,
+      "item_lr": 0.3,
+      "matched_ndcg200": 0.0025271374202428397,
+      "dp_ndcg200": 0.0017389540037377308,
+      "ndcg_gain150_200_percent_range": [
+        19.952285559821842,
+        25.40154282173046
+      ],
+      "objective_drop150_200_percent_range": [
+        0.0012695076041289877,
+        0.001290323393618515
+      ],
+      "extended_copies": 3
+    },
+    {
+      "dataset": "amazon_kindle",
+      "rate_label": "mixed_item_low",
+      "user_lr": 7.0,
+      "item_lr": 0.3,
+      "matched_ndcg200": 0.00419362004172513,
+      "dp_ndcg200": 0.0019592794453812336,
+      "ndcg_gain150_200_percent_range": [
+        49.25932008121174,
+        61.77482405264718
+      ],
+      "objective_drop150_200_percent_range": [
+        0.002968197488179141,
+        0.003101435441682366
+      ],
+      "extended_copies": 3
+    },
+    {
+      "dataset": "netflix5k5k",
+      "rate_label": "published",
+      "user_lr": 2.4,
+      "item_lr": 0.24,
+      "matched_ndcg200": 0.16831017451106797,
+      "dp_ndcg200": 0.16709667489228783,
+      "ndcg_gain150_200_percent_range": [
+        4.357596340147948,
+        9.028768495297467
+      ],
+      "objective_drop150_200_percent_range": [
+        0.23278980522411352,
+        0.6456699420605627
+      ],
+      "extended_copies": 2
+    },
+    {
+      "dataset": "netflix5k5k",
+      "rate_label": "common_low",
+      "user_lr": 3.0,
+      "item_lr": 0.3,
+      "matched_ndcg200": 0.17169527409817276,
+      "dp_ndcg200": 0.17340786795581256,
+      "ndcg_gain150_200_percent_range": [
+        1.5211463719778056,
+        2.877244988282255
+      ],
+      "objective_drop150_200_percent_range": [
+        1.5598981671163956,
+        2.655361220962292
+      ],
+      "extended_copies": 3
+    },
+    {
+      "dataset": "netflix5k5k",
+      "rate_label": "common_high",
+      "user_lr": 7.0,
+      "item_lr": 0.7,
+      "matched_ndcg200": 0.18311980843084927,
+      "dp_ndcg200": 0.1776527006024761,
+      "ndcg_gain150_200_percent_range": [
+        0.23365870756570625,
+        1.9382202392641528
+      ],
+      "objective_drop150_200_percent_range": [
+        0.3176864036796488,
+        0.4547318325592313
+      ],
+      "extended_copies": 0
+    }
+  ]
+}

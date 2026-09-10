@@ -80,6 +80,47 @@ def weighted_nsmf_loss(
     return positive_loss + missing_loss + penalty
 
 
+def weighted_nsmf_loss_indexed(
+    user_factors: torch.Tensor,
+    item_factors: torch.Tensor,
+    train_users: torch.Tensor,
+    train_items: torch.Tensor,
+    *,
+    omega: float,
+    alpha: float = 1.0,
+    beta: float = 1.0,
+    regularization: float = 0.0,
+) -> torch.Tensor:
+    """Evaluate Eq. (2) from sparse observed indices without densification."""
+
+    _validate_factors(user_factors, item_factors)
+    if train_users.ndim != 1 or train_items.ndim != 1:
+        raise ValueError("Interaction indices must be one-dimensional.")
+    if train_users.shape != train_items.shape:
+        raise ValueError("Interaction indices must be aligned.")
+    if train_users.dtype != torch.long or train_items.dtype != torch.long:
+        raise TypeError("Interaction indices must be LongTensors.")
+    if omega <= 0.0 or alpha <= 0.0 or beta <= 0.0:
+        raise ValueError("Loss weights must be positive.")
+    if regularization < 0.0:
+        raise ValueError("regularization must be non-negative.")
+    interaction_users = user_factors.index_select(0, train_users)
+    interaction_items = item_factors.index_select(0, train_items)
+    observed_predictions = (interaction_users * interaction_items).sum(dim=1)
+    positive_loss = omega * (1.0 - observed_predictions).square().sum()
+    all_prediction_energy = torch.sum(
+        (user_factors.T @ user_factors) * (item_factors.T @ item_factors)
+    )
+    missing_loss = alpha * beta * (
+        all_prediction_energy - observed_predictions.square().sum()
+    )
+    penalty = regularization * (
+        item_factors.shape[0] * user_factors.square().sum()
+        + user_factors.shape[0] * item_factors.square().sum()
+    )
+    return positive_loss + missing_loss + penalty
+
+
 def user_bgd_gradient(
     user_factor: torch.Tensor,
     item_factors: torch.Tensor,

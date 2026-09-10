@@ -1,0 +1,51 @@
+protocol_id: REVIEW-REVISION-NETFLIX-PROVENANCE-20260831-V2
+frozen_at: 2026-08-31T09:15:00+08:00
+strategy: scheme_A_retain_and_audit_official_fixed_splits
+purpose: >-
+  Reconstruct the exact anonymous positive-event object represented by the
+  Netflix-5K5K files distributed in the P-NSMF repository, verify all three
+  split copies, and document what can and cannot be reproduced from raw data.
+
+primary_sources:
+  construction_paper:
+    title: Group Preference Based Bayesian Personalized Ranking with Rich Interactions
+    venue: IJCAI 2013
+    url: https://www.ijcai.org/Proceedings/13/Papers/396.pdf
+  fixed_split_repository:
+    url: https://github.com/PengQ94/P-NSMF
+    local_commit: b900e205d60f219ae3c2d78b2961a5886a50c0a7
+  pnsmf_paper:
+    url: https://doi.org/10.1016/j.knosys.2022.109347
+
+declared_construction:
+  raw_source: Netflix_Prize_ratings
+  sampled_users: 5000
+  sampled_items: 5000
+  ratings_in_sample_before_threshold: 282474
+  positive_rule: rating_strictly_greater_than_3
+  positive_events_expected: 155872
+  split_rule: >-
+    Randomly divide positive events into equal train and test halves, then move
+    approximately one training event per user to validation; repeat three times.
+  identifier_format: anonymous_one_based_integer_user_item_pairs
+
+audit_invariants:
+  - every_file_has_exactly_two_integer_columns
+  - identifiers_are_within_1_to_5000
+  - no_duplicate_pair_within_a_file
+  - train_validation_and_test_are_pairwise_disjoint_within_copy
+  - train_plus_validation_equals_77936_in_each_copy
+  - test_equals_77936_in_each_copy
+  - union_equals_155872_in_each_copy
+  - all_three_copy_unions_are_identical
+  - every_file_has_sha256_manifest
+
+nonclaims:
+  - original_raw_user_and_movie_identifier_mapping_is_not_recoverable
+  - original_5000_by_5000_sampling_seed_is_not_public
+  - audit_does_not_claim_byte_identical_reconstruction_from_raw_Netflix_Prize_files
+  - fixed_pair_files_are_third_party_data_and_are_not_redistributed
+
+outputs:
+  manifest_json: results/revision_v2/netflix_provenance/netflix5k5k_manifest_v2.json
+  human_readable_report: results/revision_v2/netflix_provenance/netflix5k5k_manifest_v2.md

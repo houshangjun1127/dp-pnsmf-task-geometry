@@ -1,0 +1,195 @@
+{
+  "status": "matched_control_long_horizon_convergence_summary",
+  "protocol_id": "REVIEW-REVISION-SENSITIVITY-UNCERTAINTY-20260831-V2",
+  "coverage_amendment": "REVIEW-COMPLETION-20260907-V2.1",
+  "rows": [
+    {
+      "dataset": "ml1m",
+      "copy": 1,
+      "rate_label": "published",
+      "ndcg@20_round200": 0.259654166169218,
+      "ndcg@20_round400": 0.2590883399862596,
+      "ndcg@20_round800": 0.2589124837091191,
+      "objective_round200": 155.68942710836785,
+      "objective_round800": 155.07967851127768,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\ml1m_copy1_published_seed20260924_matched_r800.json"
+    },
+    {
+      "dataset": "ml1m",
+      "copy": 2,
+      "rate_label": "published",
+      "ndcg@20_round200": 0.25980027619356416,
+      "ndcg@20_round400": 0.25898876172087393,
+      "ndcg@20_round800": 0.2587972223630567,
+      "objective_round200": 155.75773238196902,
+      "objective_round800": 155.11962922289518,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\ml1m_copy2_published_seed20260925_matched_r800.json"
+    },
+    {
+      "dataset": "ml1m",
+      "copy": 3,
+      "rate_label": "published",
+      "ndcg@20_round200": 0.2585526554285927,
+      "ndcg@20_round400": 0.25774645380122924,
+      "ndcg@20_round800": 0.2580178930122518,
+      "objective_round200": 155.62079974402138,
+      "objective_round800": 155.087136759359,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\ml1m_copy3_published_seed20260926_matched_r800.json"
+    },
+    {
+      "dataset": "amazon_kindle",
+      "copy": 1,
+      "rate_label": "published",
+      "ndcg@20_round200": 0.012411932655256511,
+      "ndcg@20_round400": 0.029457713835034722,
+      "ndcg@20_round800": 0.03780526274056194,
+      "objective_round200": 68.65160044692777,
+      "objective_round800": 65.9261927469918,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\amazon_kindle_copy1_published_seed20260924_matched_r800.json"
+    },
+    {
+      "dataset": "amazon_kindle",
+      "copy": 1,
+      "rate_label": "common_low",
+      "ndcg@20_round200": 0.002532204275283416,
+      "ndcg@20_round400": 0.00666081769734556,
+      "ndcg@20_round800": 0.01869157698565061,
+      "objective_round200": 68.66456255509388,
+      "objective_round800": 68.63127857472328,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\amazon_kindle_copy1_common_low_seed20260924_matched_r800.json"
+    },
+    {
+      "dataset": "amazon_kindle",
+      "copy": 1,
+      "rate_label": "mixed_item_low",
+      "ndcg@20_round200": 0.0044298823650859714,
+      "ndcg@20_round400": 0.017239590611833458,
+      "ndcg@20_round800": 0.0312837286474299,
+      "objective_round200": 68.66134311934289,
+      "objective_round800": 68.35117243749242,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\amazon_kindle_copy1_mixed_item_low_seed20260924_matched_r800.json"
+    },
+    {
+      "dataset": "amazon_kindle",
+      "copy": 2,
+      "rate_label": "published",
+      "ndcg@20_round200": 0.012470197583854937,
+      "ndcg@20_round400": 0.0319834833386794,
+      "ndcg@20_round800": 0.03841849923180741,
+      "objective_round200": 68.65221933658133,
+      "objective_round800": 66.03694700360843,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\amazon_kindle_copy2_published_seed20260925_matched_r800.json"
+    },
+    {
+      "dataset": "amazon_kindle",
+      "copy": 2,
+      "rate_label": "common_low",
+      "ndcg@20_round200": 0.0023658369871852564,
+      "ndcg@20_round400": 0.006155423248246653,
+      "ndcg@20_round800": 0.020218649975991904,
+      "objective_round200": 68.66460257048979,
+      "objective_round800": 68.63400446815156,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\amazon_kindle_copy2_common_low_seed20260925_matched_r800.json"
+    },
+    {
+      "dataset": "amazon_kindle",
+      "copy": 2,
+      "rate_label": "mixed_item_low",
+      "ndcg@20_round200": 0.00392796406496798,
+      "ndcg@20_round400": 0.01775063795306447,
+      "ndcg@20_round800": 0.0333631476881683,
+      "objective_round200": 68.66146084707185,
+      "objective_round800": 68.37801084614964,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\amazon_kindle_copy2_mixed_item_low_seed20260925_matched_r800.json"
+    },
+    {
+      "dataset": "amazon_kindle",
+      "copy": 3,
+      "rate_label": "published",
+      "ndcg@20_round200": 0.012736950156487169,
+      "ndcg@20_round400": 0.03213972594647733,
+      "ndcg@20_round800": 0.03943310949332535,
+      "objective_round200": 68.65572082271842,
+      "objective_round800": 65.99851998660513,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\amazon_kindle_copy3_published_seed20260926_matched_r800.json"
+    },
+    {
+      "dataset": "amazon_kindle",
+      "copy": 3,
+      "rate_label": "common_low",
+      "ndcg@20_round200": 0.002683370998259847,
+      "ndcg@20_round400": 0.006989562536398239,
+      "ndcg@20_round800": 0.020823440478507038,
+      "objective_round200": 68.66766640882949,
+      "objective_round800": 68.63728206627748,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\amazon_kindle_copy3_common_low_seed20260926_matched_r800.json"
+    },
+    {
+      "dataset": "amazon_kindle",
+      "copy": 3,
+      "rate_label": "mixed_item_low",
+      "ndcg@20_round200": 0.004223013695121437,
+      "ndcg@20_round400": 0.017867221433007667,
+      "ndcg@20_round800": 0.03353515353073162,
+      "objective_round200": 68.66458764624342,
+      "objective_round800": 68.38385159936493,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\amazon_kindle_copy3_mixed_item_low_seed20260926_matched_r800.json"
+    },
+    {
+      "dataset": "netflix5k5k",
+      "copy": 1,
+      "rate_label": "common_low",
+      "ndcg@20_round200": 0.17252089528991651,
+      "ndcg@20_round400": 0.1802294613769654,
+      "ndcg@20_round800": 0.18339540284988354,
+      "objective_round200": 56.71246812128301,
+      "objective_round800": 51.51250684052129,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\netflix5k5k_copy1_common_low_seed20260924_matched_r800.json"
+    },
+    {
+      "dataset": "netflix5k5k",
+      "copy": 2,
+      "rate_label": "published",
+      "ndcg@20_round200": 0.16625329702270697,
+      "ndcg@20_round400": 0.17635415804482368,
+      "ndcg@20_round800": 0.18105940667087875,
+      "objective_round200": 58.39209704361787,
+      "objective_round800": 51.506843079616424,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\netflix5k5k_copy2_published_seed20260925_matched_r800.json"
+    },
+    {
+      "dataset": "netflix5k5k",
+      "copy": 2,
+      "rate_label": "common_low",
+      "ndcg@20_round200": 0.17095618237392698,
+      "ndcg@20_round400": 0.17937138518431722,
+      "ndcg@20_round800": 0.18158899621145946,
+      "objective_round200": 57.27330201680077,
+      "objective_round800": 51.55019009854408,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\netflix5k5k_copy2_common_low_seed20260925_matched_r800.json"
+    },
+    {
+      "dataset": "netflix5k5k",
+      "copy": 3,
+      "rate_label": "published",
+      "ndcg@20_round200": 0.16789276611182768,
+      "ndcg@20_round400": 0.17955286357782957,
+      "ndcg@20_round800": 0.18312218802739444,
+      "objective_round200": 58.51326012866522,
+      "objective_round800": 51.62602165855954,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\netflix5k5k_copy3_published_seed20260926_matched_r800.json"
+    },
+    {
+      "dataset": "netflix5k5k",
+      "copy": 3,
+      "rate_label": "common_low",
+      "ndcg@20_round200": 0.17160874463067483,
+      "ndcg@20_round400": 0.18161927488481416,
+      "ndcg@20_round800": 0.18299050206388273,
+      "objective_round200": 57.607590279170815,
+      "objective_round800": 51.66667720941336,
+      "result_file": "results\\revision_v2\\robustness\\convergence\\extensions\\netflix5k5k_copy3_common_low_seed20260926_matched_r800.json"
+    }
+  ],
+  "privacy_scope": "not private; optimization diagnostic only"
+}

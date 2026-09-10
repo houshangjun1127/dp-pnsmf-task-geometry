@@ -2,8 +2,11 @@ import pytest
 import torch
 
 from src.privacy import (
+    GaussianCompositionPrivacyConfig,
     RdpPrivacyConfig,
+    calibrate_composed_gaussian_noise_multiplier,
     clip_client_updates,
+    compute_composed_gaussian_epsilon,
     compute_epsilon,
     public_model_scaled_clip_norm,
 )
@@ -56,6 +59,32 @@ def test_privacy_epsilon_increases_with_poisson_sampling_probability() -> None:
         RdpPrivacyConfig(**base, sampling_probability=0.10)
     )
     assert epsilon_high_sampling > epsilon_low_sampling > 0.0
+
+
+def test_composed_gaussian_calibration_reaches_target_conservatively() -> None:
+    target = 2.193078238018666
+    sigma = calibrate_composed_gaussian_noise_multiplier(
+        target_epsilon=target,
+        compositions=210,
+        delta=1e-5,
+    )
+    epsilon = compute_composed_gaussian_epsilon(
+        GaussianCompositionPrivacyConfig(
+            noise_multiplier=sigma,
+            compositions=210,
+            delta=1e-5,
+        )
+    )
+    epsilon_less_noise = compute_composed_gaussian_epsilon(
+        GaussianCompositionPrivacyConfig(
+            noise_multiplier=sigma * (1.0 - 1e-6),
+            compositions=210,
+            delta=1e-5,
+        )
+    )
+    assert epsilon <= target
+    assert epsilon == pytest.approx(target, rel=1e-8)
+    assert epsilon_less_noise > epsilon
 
 
 def test_public_model_clip_schedule_obeys_growth_and_absolute_caps() -> None:

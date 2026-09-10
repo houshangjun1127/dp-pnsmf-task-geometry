@@ -13,6 +13,7 @@ from src.models import (
     pnsmf_als_round_indexed,
     user_bgd_gradient,
     weighted_nsmf_loss,
+    weighted_nsmf_loss_indexed,
 )
 from src.privacy import expected_quadratic_loss_inflation
 
@@ -57,6 +58,27 @@ def test_item_hessian_trace_matches_dense_autograd() -> None:
         regularization=regularization,
     )
     assert torch.allclose(analytic_trace, dense_hessian.diag().sum(), atol=1e-12)
+
+
+def test_sparse_weighted_loss_matches_dense_definition() -> None:
+    users, items, _, observed = _problem()
+    indices = observed.nonzero(as_tuple=False)
+    dense = weighted_nsmf_loss(
+        users,
+        items,
+        observed,
+        omega=4.0,
+        regularization=0.01,
+    )
+    sparse = weighted_nsmf_loss_indexed(
+        users,
+        items,
+        indices[:, 0],
+        indices[:, 1],
+        omega=4.0,
+        regularization=0.01,
+    )
+    assert torch.allclose(sparse, dense, atol=1e-12, rtol=1e-10)
 
 
 def test_quadratic_noise_loss_inflation_matches_monte_carlo() -> None:

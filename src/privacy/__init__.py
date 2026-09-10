@@ -1,6 +1,13 @@
 """Privacy accounting and client-update clipping utilities."""
 
-from .accounting import DEFAULT_RDP_ORDERS, RdpPrivacyConfig, compute_epsilon
+from .accounting import (
+    DEFAULT_RDP_ORDERS,
+    GaussianCompositionPrivacyConfig,
+    RdpPrivacyConfig,
+    calibrate_composed_gaussian_noise_multiplier,
+    compute_composed_gaussian_epsilon,
+    compute_epsilon,
+)
 from .pnsmf import (
     PNSMFContributionDiagnostics,
     add_gaussian_noise_to_item_gradient_sum,
@@ -55,7 +62,10 @@ from .feasibility import (
 
 __all__ = [
     "DEFAULT_RDP_ORDERS",
+    "GaussianCompositionPrivacyConfig",
     "RdpPrivacyConfig",
+    "calibrate_composed_gaussian_noise_multiplier",
+    "compute_composed_gaussian_epsilon",
     "compute_epsilon",
     "PNSMFContributionDiagnostics",
     "add_gaussian_noise_to_item_gradient_sum",

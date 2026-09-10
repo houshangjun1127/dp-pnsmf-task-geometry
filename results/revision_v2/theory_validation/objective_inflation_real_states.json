@@ -1,0 +1,76 @@
+{
+  "status": "real_state_quadratic_inflation_validation",
+  "protocol_id": "REVIEW-REVISION-SENSITIVITY-UNCERTAINTY-20260831-V2",
+  "rows": [
+    {
+      "dataset": "ml1m",
+      "copy": 1,
+      "factor_state": "results\\registered_followup_geometry_budget_v1\\factors\\ml1m_copy1_eps2p193_seed20260821.npz",
+      "run_state": "results\\registered_followup_geometry_budget_v1\\runs\\ml1m_copy1_eps2p193_seed20260821.json",
+      "coordinates": 79040,
+      "update_noise_variance": 5.963969954816268e-06,
+      "hessian_trace_direct": 3114.9986992770127,
+      "hessian_trace_helper": 3114.9986992770164,
+      "hessian_trace_absolute_difference": 3.637978807091713e-12,
+      "analytic_expected_conditional_loss_inflation": 0.00928887932588993,
+      "runner_recorded_expected_conditional_loss_inflation": 0.00928887932588994,
+      "monte_carlo_draws": 1000,
+      "effective_antithetic_pairs": 500,
+      "empirical_mean_conditional_loss_inflation": 0.009289702795291606,
+      "monte_carlo_standard_error": 4.8952863016070614e-06,
+      "monte_carlo_95pct_interval": [
+        0.009280108034140457,
+        0.009299297556442754
+      ],
+      "relative_error_percent": 0.008865110340930304,
+      "maximum_absolute_quadratic_identity_error": 3.82055498349132e-14
+    },
+    {
+      "dataset": "amazon_kindle",
+      "copy": 1,
+      "factor_state": "results\\registered_followup_geometry_budget_v1\\factors\\amazon_kindle_copy1_eps2p193_seed20260821.npz",
+      "run_state": "results\\registered_followup_geometry_budget_v1\\runs\\amazon_kindle_copy1_eps2p193_seed20260821.json",
+      "coordinates": 225960,
+      "update_noise_variance": 1.2179596433529023e-05,
+      "hessian_trace_direct": 81.54977377945403,
+      "hessian_trace_helper": 81.54977377945401,
+      "hessian_trace_absolute_difference": 1.4210854715202004e-14,
+      "analytic_expected_conditional_loss_inflation": 0.0004966216669396685,
+      "runner_recorded_expected_conditional_loss_inflation": 0.0004966216669396684,
+      "monte_carlo_draws": 1000,
+      "effective_antithetic_pairs": 500,
+      "empirical_mean_conditional_loss_inflation": 0.000496537209057919,
+      "monte_carlo_standard_error": 6.935341205178477e-08,
+      "monte_carlo_95pct_interval": [
+        0.0004964012763702975,
+        0.0004966731417455405
+      ],
+      "relative_error_percent": -0.017006483480658318,
+      "maximum_absolute_quadratic_identity_error": 8.974429272640139e-15
+    },
+    {
+      "dataset": "netflix5k5k",
+      "copy": 1,
+      "factor_state": "results\\registered_followup_geometry_budget_v1\\factors\\netflix5k5k_copy1_eps2p193_seed20260821.npz",
+      "run_state": "results\\registered_followup_geometry_budget_v1\\runs\\netflix5k5k_copy1_eps2p193_seed20260821.json",
+      "coordinates": 100000,
+      "update_noise_variance": 5.569924257372783e-06,
+      "hessian_trace_direct": 2038.249651805623,
+      "hessian_trace_helper": 2038.2496518056419,
+      "hessian_trace_absolute_difference": 1.887201506178826e-11,
+      "analytic_expected_conditional_loss_inflation": 0.0056764480890868834,
+      "runner_recorded_expected_conditional_loss_inflation": 0.005676448089086936,
+      "monte_carlo_draws": 1000,
+      "effective_antithetic_pairs": 500,
+      "empirical_mean_conditional_loss_inflation": 0.0056764155269838235,
+      "monte_carlo_standard_error": 1.173741066173273e-06,
+      "monte_carlo_95pct_interval": [
+        0.005674114994494124,
+        0.005678716059473523
+      ],
+      "relative_error_percent": -0.0005736351772953956,
+      "maximum_absolute_quadratic_identity_error": 9.842821002692403e-15
+    }
+  ],
+  "interpretation": "Conditional fixed-user item-subproblem validation. It does not predict multi-round ranking utility."
+}

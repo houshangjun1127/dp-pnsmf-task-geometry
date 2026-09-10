@@ -1,0 +1,163 @@
+{
+  "status": "verified_fixed_split_provenance_audit",
+  "protocol_id": "REVIEW-REVISION-NETFLIX-PROVENANCE-20260831-V2",
+  "dataset": {
+    "name": "Netflix-5K5K",
+    "declared_users": 5000,
+    "declared_items": 5000,
+    "ratings_before_positive_threshold_reported_by_source": 282474,
+    "positive_rule_reported_by_source": "rating > 3",
+    "positive_events_reconstructed_from_fixed_files": 155872,
+    "identifier_semantics": "anonymous one-based integer user-item pairs"
+  },
+  "sources": {
+    "construction_paper": "https://www.ijcai.org/Proceedings/13/Papers/396.pdf",
+    "fixed_split_repository": "https://github.com/PengQ94/P-NSMF",
+    "audited_repository_commit": "b900e205d60f219ae3c2d78b2961a5886a50c0a7"
+  },
+  "construction_reported_by_primary_source": {
+    "sample_5000_users_and_5000_items_from_Netflix_pool": true,
+    "retain_ratings_strictly_greater_than_3": true,
+    "split_positive_pairs_half_train_half_test": true,
+    "move_one_training_pair_per_eligible_user_to_validation": true,
+    "repeat_split_three_times": true
+  },
+  "copies": [
+    {
+      "copy": 1,
+      "counts": {
+        "train": 73320,
+        "validation": 4616,
+        "train_plus_validation": 77936,
+        "test": 77936,
+        "positive_union": 155872
+      },
+      "coverage": {
+        "users_in_positive_union": 4843,
+        "items_in_positive_union": 3586,
+        "users_with_validation_pair": 4616,
+        "maximum_validation_pairs_per_user": 1
+      },
+      "canonical_positive_pair_sha256": "ef4eaca334f8ca2a16f77f3e337114e64ce41cbd625273736a74082af0faadcf",
+      "files": {
+        "train": {
+          "name": "NF5kUsers5kItemsHalfHalf-copy1-train",
+          "records": 73320,
+          "sha256": "1e0702095f1d8fefa9252ed90c1040c6bd55ebd882a8efb431111331ada0b598"
+        },
+        "valid": {
+          "name": "NF5kUsers5kItemsHalfHalf-copy1-valid",
+          "records": 4616,
+          "sha256": "c21534cfc40181551adb0444856a80eb9cac72b7bad7ee8772257938ed72b7c0"
+        },
+        "test": {
+          "name": "NF5kUsers5kItemsHalfHalf-copy1-test",
+          "records": 77936,
+          "sha256": "b5bf9a946231c23ced864002b2afb4316b3f28e20cb73410f8b01a3fdfb80ccd"
+        }
+      },
+      "invariants": {
+        "pairwise_disjoint_splits": true,
+        "validation_at_most_one_pair_per_user": true,
+        "train_plus_validation_equals_expected_half": true,
+        "test_equals_expected_half": true,
+        "union_equals_expected_positive_count": true
+      }
+    },
+    {
+      "copy": 2,
+      "counts": {
+        "train": 73291,
+        "validation": 4645,
+        "train_plus_validation": 77936,
+        "test": 77936,
+        "positive_union": 155872
+      },
+      "coverage": {
+        "users_in_positive_union": 4843,
+        "items_in_positive_union": 3586,
+        "users_with_validation_pair": 4645,
+        "maximum_validation_pairs_per_user": 1
+      },
+      "canonical_positive_pair_sha256": "ef4eaca334f8ca2a16f77f3e337114e64ce41cbd625273736a74082af0faadcf",
+      "files": {
+        "train": {
+          "name": "NF5kUsers5kItemsHalfHalf-copy2-train",
+          "records": 73291,
+          "sha256": "565a2ba7c37ce997c1ef9050c9530111d4e133c615e1d21860301d1111a04cf1"
+        },
+        "valid": {
+          "name": "NF5kUsers5kItemsHalfHalf-copy2-valid",
+          "records": 4645,
+          "sha256": "607d01d457253dd3dfd8205645ec36be7626c8bec1d96fc145967a979e23bdab"
+        },
+        "test": {
+          "name": "NF5kUsers5kItemsHalfHalf-copy2-test",
+          "records": 77936,
+          "sha256": "f834e03f567c97e5f679487fe8afcfb6d3220276c38d5fa5d1701b6e6fec8295"
+        }
+      },
+      "invariants": {
+        "pairwise_disjoint_splits": true,
+        "validation_at_most_one_pair_per_user": true,
+        "train_plus_validation_equals_expected_half": true,
+        "test_equals_expected_half": true,
+        "union_equals_expected_positive_count": true
+      }
+    },
+    {
+      "copy": 3,
+      "counts": {
+        "train": 73328,
+        "validation": 4608,
+        "train_plus_validation": 77936,
+        "test": 77936,
+        "positive_union": 155872
+      },
+      "coverage": {
+        "users_in_positive_union": 4843,
+        "items_in_positive_union": 3586,
+        "users_with_validation_pair": 4608,
+        "maximum_validation_pairs_per_user": 1
+      },
+      "canonical_positive_pair_sha256": "ef4eaca334f8ca2a16f77f3e337114e64ce41cbd625273736a74082af0faadcf",
+      "files": {
+        "train": {
+          "name": "NF5kUsers5kItemsHalfHalf-copy3-train",
+          "records": 73328,
+          "sha256": "5f248f36f8cffecc2009f5f6a5f71d2c55e8c0c86e91632f02b7f99ba27f39e7"
+        },
+        "valid": {
+          "name": "NF5kUsers5kItemsHalfHalf-copy3-valid",
+          "records": 4608,
+          "sha256": "a9f8edbd74e4bb393a401046a32c30aaa9b4d8fc26149606fcec76fe78fb4e1c"
+        },
+        "test": {
+          "name": "NF5kUsers5kItemsHalfHalf-copy3-test",
+          "records": 77936,
+          "sha256": "ad296cfa1a62190791060545a0165c6d509ef47314b43d0c3178790cee3da46f"
+        }
+      },
+      "invariants": {
+        "pairwise_disjoint_splits": true,
+        "validation_at_most_one_pair_per_user": true,
+        "train_plus_validation_equals_expected_half": true,
+        "test_equals_expected_half": true,
+        "union_equals_expected_positive_count": true
+      }
+    }
+  ],
+  "cross_copy": {
+    "all_copy_unions_identical": true,
+    "canonical_positive_pair_sha256": "ef4eaca334f8ca2a16f77f3e337114e64ce41cbd625273736a74082af0faadcf"
+  },
+  "redistribution": {
+    "pair_data_written_by_this_audit": false,
+    "manifest_contains_only_counts_and_hashes": true
+  },
+  "limitations": [
+    "The raw Netflix Prize user/movie identifier mapping is not published with the fixed files.",
+    "The original 5000-user/5000-item sampling seed is not reported.",
+    "This verifies and reconstructs the anonymous positive-event object in memory; it is not a byte-identical rebuild from raw ratings."
+  ]
+}

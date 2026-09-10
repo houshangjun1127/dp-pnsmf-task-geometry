@@ -1,5 +1,6 @@
-"""P-NSMF model operations used by the reported experiments."""
+"""P-NSMF and DPALS-style model operations used by the reported experiments."""
 
+from .dpals import dpals_implicit_loss_indexed, random_orthonormal_item_factors
 from .pnsmf import (
     aggregate_client_item_statistics,
     client_item_statistics,
@@ -12,9 +13,12 @@ from .pnsmf import (
     user_bgd_gradient,
     user_second_moment,
     weighted_nsmf_loss,
+    weighted_nsmf_loss_indexed,
 )
 
 __all__ = [
+    "dpals_implicit_loss_indexed",
+    "random_orthonormal_item_factors",
     "aggregate_client_item_statistics",
     "client_item_statistics",
     "item_bgd_gradient",
@@ -26,4 +30,5 @@ __all__ = [
     "user_bgd_gradient",
     "user_second_moment",
     "weighted_nsmf_loss",
+    "weighted_nsmf_loss_indexed",
 ]

@@ -1,0 +1,82 @@
+protocol_id: REVIEW-REVISION-DPALS-ML1M-20260831-V2
+frozen_at: 2026-08-31T09:15:00+08:00
+study_phase: reviewer_requested_controlled_baseline
+purpose: >-
+  Add a DPALS-style sufficient-statistic ALS baseline on the same MovieLens-1M
+  fixed splits, privacy target, latent dimension, full catalog, and NDCG@20
+  endpoint. This is a mechanism calibration, not a superiority comparison.
+
+source_method:
+  citation: Chien et al., ICML 2021, Private Alternating Least Squares
+  url: https://proceedings.mlr.press/v139/chien21a.html
+  retained_components:
+    - private_local_user_updates
+    - l2_user_factor_clipping
+    - at_most_k_item_contributions_per_user
+    - gaussian_noise_on_item_gram_and_vector_sufficient_statistics
+    - noisy_shared_implicit_feedback_gram_term
+    - positive_semidefinite_projection_and_pseudoinverse
+    - item_factor_whitening_postprocessing
+  omitted_components:
+    - private_frequency_filtering
+    - adaptive_item_sampling
+    - private_global_centering
+
+dataset:
+  key: ml1m
+  copies: [1, 2, 3]
+  declared_users: 6040
+  declared_items: 3952
+  binary_event_value: 1.0
+  seen_mask: train_file_only
+  evaluation_target: test
+  ranking_catalog: all_declared_3952_items
+  primary_metric: ndcg_at_20
+
+common:
+  embedding_dim: 20
+  entry_clip_gamma_M: 1.0
+  initialization: random_orthonormal_independent_of_private_data
+  interaction_sampling: uniform_without_replacement_once_per_user
+  dtype: float64
+  delta: 1.0e-5
+  target_epsilon: 2.193078238018666
+
+validation_selection:
+  dataset_copy: 1
+  target: validation
+  seed: 20260901
+  arm: matched_no_noise
+  grid:
+    interaction_cap_k: [20, 50]
+    private_item_rounds_T: [5, 10]
+    user_clip_gamma_u: [0.5, 1.0]
+    implicit_penalty_lambda0: [0.01, 0.1]
+    l2_regularization_lambda: [0.01]
+  selection_rule:
+    primary: maximum_final_validation_ndcg_at_20
+    tie_1: smaller_k_times_T
+    tie_2: smaller_T
+    tie_3: lexical_parameter_order
+
+test_seeds_by_copy: {1: 20260911, 2: 20260912, 3: 20260913}
+test_arms:
+  matched_dpals_no_noise:
+    gaussian_noise_multiplier: 0.0
+    interpretation: same cap_clipping_sampling_and_als_updates_without_noise
+  private_dpals:
+    gaussian_noise_multiplier: calibrated_after_validation_selection
+    accounting: >-
+      RDP composition of (k+1)*T Gaussian mechanisms: k item sufficient-
+      statistic participations plus one shared implicit Gram release per round.
+
+privacy_scope:
+  guarantee: user_level_joint_DP_for_public_item_factors
+  individual_user_factor: privileged_output_for_that_user
+  evaluation_warning: test_metrics_are_offline_nonprivate_audit_outputs
+
+reporting_limits:
+  - objective_and_release_geometry_differ_from_direct_gradient_DP_PNSMF
+  - same_epsilon_delta_d_and_endpoint_do_not_make_the_algorithms_identical
+  - report_copy_level_values_and_no_population_significance_test
+  - no_claim_of_performance_superiority

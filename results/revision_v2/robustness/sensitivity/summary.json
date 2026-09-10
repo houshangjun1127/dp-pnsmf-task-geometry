@@ -1,0 +1,442 @@
+{
+  "status": "one_factor_C_d_sensitivity_summary",
+  "protocol_id": "REVIEW-REVISION-SENSITIVITY-UNCERTAINTY-20260831-V2",
+  "rows": [
+    {
+      "dataset": "ml1m",
+      "configuration": "d10_C1",
+      "embedding_dim": 10,
+      "clip_norm": 1.0,
+      "matched_ndcg@20_mean": 0.25928537261724327,
+      "private_ndcg@20_mean": 0.25922375776538936,
+      "relative_loss_percent_mean": 0.02387782134296857,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.2596490394158717,
+          "private": 0.2598715311400492,
+          "relative_loss_percent": -0.08568940777829302
+        },
+        {
+          "copy": 2,
+          "matched": 0.25939366449608753,
+          "private": 0.25932053620289125,
+          "relative_loss_percent": 0.028192012067195824
+        },
+        {
+          "copy": 3,
+          "matched": 0.25881341393977053,
+          "private": 0.25847920595322765,
+          "relative_loss_percent": 0.1291308597400029
+        }
+      ]
+    },
+    {
+      "dataset": "ml1m",
+      "configuration": "d20_C0p5",
+      "embedding_dim": 20,
+      "clip_norm": 0.5,
+      "matched_ndcg@20_mean": 0.2594829222566913,
+      "private_ndcg@20_mean": 0.259301873609768,
+      "relative_loss_percent_mean": 0.07006577149427928,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.25965682291267017,
+          "private": 0.25941139135739516,
+          "relative_loss_percent": 0.09452151209504565
+        },
+        {
+          "copy": 2,
+          "matched": 0.2600155995964426,
+          "private": 0.26035701788435867,
+          "relative_loss_percent": -0.1313068479144946
+        },
+        {
+          "copy": 3,
+          "matched": 0.25877634426096113,
+          "private": 0.25813721158755004,
+          "relative_loss_percent": 0.24698265030228678
+        }
+      ]
+    },
+    {
+      "dataset": "ml1m",
+      "configuration": "d20_C1",
+      "embedding_dim": 20,
+      "clip_norm": 1.0,
+      "matched_ndcg@20_mean": 0.25923822860862433,
+      "private_ndcg@20_mean": 0.2590756352498965,
+      "relative_loss_percent_mean": 0.06287908642536444,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.2595636025785424,
+          "private": 0.25935793367789556,
+          "relative_loss_percent": 0.07923641781963359
+        },
+        {
+          "copy": 2,
+          "matched": 0.25950979923688194,
+          "private": 0.25976215293557564,
+          "relative_loss_percent": -0.097242454595461
+        },
+        {
+          "copy": 3,
+          "matched": 0.2586412840104486,
+          "private": 0.2581068191362184,
+          "relative_loss_percent": 0.20664329605192075
+        }
+      ]
+    },
+    {
+      "dataset": "ml1m",
+      "configuration": "d20_C2",
+      "embedding_dim": 20,
+      "clip_norm": 2.0,
+      "matched_ndcg@20_mean": 0.2595109314612876,
+      "private_ndcg@20_mean": 0.2597966395948873,
+      "relative_loss_percent_mean": -0.11019271577518508,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.2601281198980848,
+          "private": 0.2600474452692699,
+          "relative_loss_percent": 0.03101342094293948
+        },
+        {
+          "copy": 2,
+          "matched": 0.2596060614289809,
+          "private": 0.2602507184823989,
+          "relative_loss_percent": -0.24832126409896663
+        },
+        {
+          "copy": 3,
+          "matched": 0.25879861305679713,
+          "private": 0.2590917550329931,
+          "relative_loss_percent": -0.1132703041695281
+        }
+      ]
+    },
+    {
+      "dataset": "ml1m",
+      "configuration": "d40_C1",
+      "embedding_dim": 40,
+      "clip_norm": 1.0,
+      "matched_ndcg@20_mean": 0.25906120127583887,
+      "private_ndcg@20_mean": 0.2592160072111643,
+      "relative_loss_percent_mean": -0.05949632612102952,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.2593773623413919,
+          "private": 0.25925592781214674,
+          "relative_loss_percent": 0.04681770534983974
+        },
+        {
+          "copy": 2,
+          "matched": 0.2594215916556964,
+          "private": 0.2603458671909289,
+          "relative_loss_percent": -0.3562831949852483
+        },
+        {
+          "copy": 3,
+          "matched": 0.25838464983042825,
+          "private": 0.25804622663041715,
+          "relative_loss_percent": 0.13097651127232
+        }
+      ]
+    },
+    {
+      "dataset": "amazon_kindle",
+      "configuration": "d10_C1",
+      "embedding_dim": 10,
+      "clip_norm": 1.0,
+      "matched_ndcg@20_mean": 0.011545133072204013,
+      "private_ndcg@20_mean": 0.002374043462276392,
+      "relative_loss_percent_mean": 79.23526027858819,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.011413666162955244,
+          "private": 0.0023626355055729395,
+          "relative_loss_percent": 79.29994208836048
+        },
+        {
+          "copy": 2,
+          "matched": 0.010013298239759279,
+          "private": 0.002301684002397663,
+          "relative_loss_percent": 77.01372767208224
+        },
+        {
+          "copy": 3,
+          "matched": 0.013208434813897515,
+          "private": 0.002457810878858573,
+          "relative_loss_percent": 81.39211107532182
+        }
+      ]
+    },
+    {
+      "dataset": "amazon_kindle",
+      "configuration": "d20_C0p5",
+      "embedding_dim": 20,
+      "clip_norm": 0.5,
+      "matched_ndcg@20_mean": 0.01047917409440092,
+      "private_ndcg@20_mean": 0.0025487417208866956,
+      "relative_loss_percent_mean": 75.6393571474715,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.010324341398605264,
+          "private": 0.002406367931314824,
+          "relative_loss_percent": 76.69228633179542
+        },
+        {
+          "copy": 2,
+          "matched": 0.010889540452984084,
+          "private": 0.0024712906675337775,
+          "relative_loss_percent": 77.30583142416663
+        },
+        {
+          "copy": 3,
+          "matched": 0.010223640431613413,
+          "private": 0.002768566563811486,
+          "relative_loss_percent": 72.91995368645244
+        }
+      ]
+    },
+    {
+      "dataset": "amazon_kindle",
+      "configuration": "d20_C1",
+      "embedding_dim": 20,
+      "clip_norm": 1.0,
+      "matched_ndcg@20_mean": 0.012192009908435006,
+      "private_ndcg@20_mean": 0.002550863540994783,
+      "relative_loss_percent_mean": 79.06989662591573,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.01180709487406763,
+          "private": 0.0024825693892476792,
+          "relative_loss_percent": 78.97391851487328
+        },
+        {
+          "copy": 2,
+          "matched": 0.012484570005201652,
+          "private": 0.002466356962925345,
+          "relative_loss_percent": 80.24475843462974
+        },
+        {
+          "copy": 3,
+          "matched": 0.012284364846035735,
+          "private": 0.0027036642708113236,
+          "relative_loss_percent": 77.99101292824416
+        }
+      ]
+    },
+    {
+      "dataset": "amazon_kindle",
+      "configuration": "d20_C2",
+      "embedding_dim": 20,
+      "clip_norm": 2.0,
+      "matched_ndcg@20_mean": 0.012899070313784058,
+      "private_ndcg@20_mean": 0.002285278380947198,
+      "relative_loss_percent_mean": 82.29030057955481,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.012313456698785306,
+          "private": 0.0021378002273610484,
+          "relative_loss_percent": 82.63850452674319
+        },
+        {
+          "copy": 2,
+          "matched": 0.013258955329606897,
+          "private": 0.0023333235459003033,
+          "relative_loss_percent": 82.40190506796526
+        },
+        {
+          "copy": 3,
+          "matched": 0.01312479891295997,
+          "private": 0.0023847113695802417,
+          "relative_loss_percent": 81.83049214395598
+        }
+      ]
+    },
+    {
+      "dataset": "amazon_kindle",
+      "configuration": "d40_C1",
+      "embedding_dim": 40,
+      "clip_norm": 1.0,
+      "matched_ndcg@20_mean": 0.014489124167645952,
+      "private_ndcg@20_mean": 0.0025970519216060427,
+      "relative_loss_percent_mean": 82.0162882942443,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.014613683838725237,
+          "private": 0.0027838155921489785,
+          "relative_loss_percent": 80.95062392979887
+        },
+        {
+          "copy": 2,
+          "matched": 0.013443138874613417,
+          "private": 0.0025364629992603856,
+          "relative_loss_percent": 81.13191403497031
+        },
+        {
+          "copy": 3,
+          "matched": 0.0154105497895992,
+          "private": 0.0024708771734087646,
+          "relative_loss_percent": 83.96632691796373
+        }
+      ]
+    },
+    {
+      "dataset": "netflix5k5k",
+      "configuration": "d10_C1",
+      "embedding_dim": 10,
+      "clip_norm": 1.0,
+      "matched_ndcg@20_mean": 0.16844561063965807,
+      "private_ndcg@20_mean": 0.16352399803599701,
+      "relative_loss_percent_mean": 2.916508182322117,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.16950010085017547,
+          "private": 0.16295128738799114,
+          "relative_loss_percent": 3.8636044635589686
+        },
+        {
+          "copy": 2,
+          "matched": 0.1660823128924974,
+          "private": 0.1625526736934148,
+          "relative_loss_percent": 2.1252348534953676
+        },
+        {
+          "copy": 3,
+          "matched": 0.16975441817630132,
+          "private": 0.1650680330265851,
+          "relative_loss_percent": 2.7606852299120144
+        }
+      ]
+    },
+    {
+      "dataset": "netflix5k5k",
+      "configuration": "d20_C0p5",
+      "embedding_dim": 20,
+      "clip_norm": 0.5,
+      "matched_ndcg@20_mean": 0.16843095046842624,
+      "private_ndcg@20_mean": 0.1649700447742513,
+      "relative_loss_percent_mean": 2.047850165679794,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.1691385582009889,
+          "private": 0.16455027521528193,
+          "relative_loss_percent": 2.712736252755957
+        },
+        {
+          "copy": 2,
+          "matched": 0.16658563494278536,
+          "private": 0.16529274480477882,
+          "relative_loss_percent": 0.7761114206819759
+        },
+        {
+          "copy": 3,
+          "matched": 0.16956865826150444,
+          "private": 0.1650671143026932,
+          "relative_loss_percent": 2.6547028236014487
+        }
+      ]
+    },
+    {
+      "dataset": "netflix5k5k",
+      "configuration": "d20_C1",
+      "embedding_dim": 20,
+      "clip_norm": 1.0,
+      "matched_ndcg@20_mean": 0.16820371806315035,
+      "private_ndcg@20_mean": 0.16558190568182163,
+      "relative_loss_percent_mean": 1.5544690385777191,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.16843919036540989,
+          "private": 0.16449468926467403,
+          "relative_loss_percent": 2.341795334077955
+        },
+        {
+          "copy": 2,
+          "matched": 0.1668163433870562,
+          "private": 0.16610395346549733,
+          "relative_loss_percent": 0.4270504358832153
+        },
+        {
+          "copy": 3,
+          "matched": 0.169355620436985,
+          "private": 0.16614707431529355,
+          "relative_loss_percent": 1.8945613457719872
+        }
+      ]
+    },
+    {
+      "dataset": "netflix5k5k",
+      "configuration": "d20_C2",
+      "embedding_dim": 20,
+      "clip_norm": 2.0,
+      "matched_ndcg@20_mean": 0.16800674273269842,
+      "private_ndcg@20_mean": 0.16536505387554548,
+      "relative_loss_percent_mean": 1.5685203171458881,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.16823345085537245,
+          "private": 0.16389445215611248,
+          "relative_loss_percent": 2.5791533593340676
+        },
+        {
+          "copy": 2,
+          "matched": 0.16676046637430042,
+          "private": 0.1661628226321655,
+          "relative_loss_percent": 0.3583845470865277
+        },
+        {
+          "copy": 3,
+          "matched": 0.16902631096842238,
+          "private": 0.16603788683835846,
+          "relative_loss_percent": 1.7680230450170689
+        }
+      ]
+    },
+    {
+      "dataset": "netflix5k5k",
+      "configuration": "d40_C1",
+      "embedding_dim": 40,
+      "clip_norm": 1.0,
+      "matched_ndcg@20_mean": 0.16942801387490986,
+      "private_ndcg@20_mean": 0.16723614217730196,
+      "relative_loss_percent_mean": 1.2936974033430664,
+      "copy_results": [
+        {
+          "copy": 1,
+          "matched": 0.17056672519418306,
+          "private": 0.16446708455195408,
+          "relative_loss_percent": 3.5761023348984375
+        },
+        {
+          "copy": 2,
+          "matched": 0.16698882282212596,
+          "private": 0.1649914710038007,
+          "relative_loss_percent": 1.196099106856271
+        },
+        {
+          "copy": 3,
+          "matched": 0.17072849360842052,
+          "private": 0.17224987097615105,
+          "relative_loss_percent": -0.891109231725509
+        }
+      ]
+    }
+  ],
+  "interpretation": "post-decision local one-factor sensitivity, not global robustness"
+}
