@@ -1,0 +1,69 @@
+{
+  "preparation_date": "2026-10-12",
+  "original_formal_environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "torch": "2.13.0+cpu",
+    "dp_accounting": "0.6.0",
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 4,
+        "prefix": "libscipy_openblas",
+        "version": "0.3.31.188.0",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX",
+        "library_file_identity": "libscipy_openblas64_-63c857e738469261263c764a36be9436.dll"
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 4,
+        "prefix": "libiomp",
+        "version": null,
+        "library_file_identity": "libiomp5md.dll"
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "libiomp",
+        "version": null,
+        "library_file_identity": "libiompstubs5md.dll"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 4,
+        "prefix": "libscipy_openblas",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX",
+        "library_file_identity": "libscipy_openblas-64eda39e79589aedb16f58e5547eb599.dll"
+      }
+    ],
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "device": "CPU",
+    "single_training_process": true
+  },
+  "local_library_paths_removed": true,
+  "packaging_validation_environment": {
+    "python": "3.11.15",
+    "packages": {
+      "numpy": "2.4.6",
+      "torch": "2.13.0+cpu",
+      "dp-accounting": "0.6.0",
+      "scipy": "1.17.1",
+      "threadpoolctl": "3.6.0",
+      "pytest": "9.1.1",
+      "PyYAML": "6.0.3"
+    }
+  },
+  "thread_limit": 4,
+  "evaluation_batch_size": 256,
+  "device": "CPU",
+  "environment_action": "Reused existing environment; no install/upgrade; historical locks unchanged",
+  "portability_scope": "Windows resource monitor; no clean-machine or other-platform full rerun performed"
+}

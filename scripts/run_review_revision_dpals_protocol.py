@@ -249,6 +249,8 @@ def run_test(args: argparse.Namespace, selection: dict[str, Any]) -> dict[str, A
 
 
 def main() -> None:
+    import warnings
+    warnings.warn('Legacy DPALS-style stress test: former same-budget accounting omitted independent channels. Superseded by run_private_als_comparison; historical outputs are not current fair-baseline evidence.', UserWarning, stacklevel=2)
     args = parse_args()
     args.result_dir.mkdir(parents=True, exist_ok=True)
     selection = None

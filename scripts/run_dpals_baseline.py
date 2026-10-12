@@ -83,6 +83,8 @@ def _quantiles(values: torch.Tensor) -> dict[str, float]:
 
 
 def main() -> None:
+    import warnings
+    warnings.warn('Legacy DPALS-style stress test: former same-budget accounting omitted independent channels. Superseded by run_private_als_comparison; historical outputs are not current fair-baseline evidence.', UserWarning, stacklevel=2)
     args = parse_args()
     if args.rounds <= 0 or args.interaction_cap <= 0:
         raise ValueError("rounds and interaction_cap must be positive.")
