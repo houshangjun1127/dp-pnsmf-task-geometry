@@ -1,5 +1,14 @@
 # Changes
 
+## Technical documentation supplement
+
+- Add expanded persistent-state privacy proof and the declared Private ALS practice algorithm/accounting in Markdown and PDF.
+- Preserve the original copy-level summary table and provide direct links to all model metrics, paired losses, event ledgers, frozen random streams and reference states.
+- Add data-free budget/fingerprint checks for these documentation statements.
+- Keep training code, configurations, results, prior versions and privacy/evaluation boundaries unchanged. No new training or factor evaluation.
+- The expanded documents accompany the computational records in this archive; version 0.4.0's DOI continues to identify its original computational snapshot.
+
+
 ## 0.4.0 — R2 update
 
 - Add the two literature-anchored Private ALS configurations with all 72 models and 36 pairs, portable protocols, frozen random streams, event accounting, and full-catalog evaluation.

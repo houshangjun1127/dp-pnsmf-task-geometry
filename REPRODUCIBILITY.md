@@ -85,7 +85,7 @@ The corresponding summary is `results/revision_v2/theory_validation/objective_in
 - Full reproduction depends on lawful access to matching benchmark files and on the recorded software environment.
 - The archive does not establish competitive private recommendation performance or general impossibility outside the declared mechanism and operating points.
 
-## 7. R2 candidate: no-data checks and frozen simulations
+## 7. R2 validation: no-data checks and frozen simulations
 
 The original planned protocol status is preserved in configs/private_als_r2_portable_v1.json; it is a clearly named path-derived copy, with original SHA256. Actual72-model completion and original excluded-artifact hashes are in results/r2_private_als/execution_manifest.csv. Both profiles and all preprocessing/init/noise entropy vectors remain frozen. Data paths resolve under --data-root; provenance sha256 identities are informational, not local file dependencies.
 
@@ -113,6 +113,11 @@ python -m scripts.run_r2_pnsmf_reference --data-root PATH_TO_DATA_ROOT --output-
 
 Then evaluate its generated factors with src.evaluation.full_catalog_stable.evaluate_factors using complete original train/test IDs, K20/batch256/CPU float64. The original factor/run SHA and batch identities in pnsmf_reference_metrics.csv identify the old research files, which are not distributed and are not expected to match new compressed-file byte headers. The launcher reconstructs factors; it is not a production DP publisher. Stable evaluator metric conventions replace ambiguous legacy ties, rather than changing training.
 
-Validation scope: this candidate is checked on the current remote base in the existing local Windows scientific environment. CSV/budget recomputation, rank 32 synthetic original/portable/dense comparisons, null/all-present checks, exact-tie oracle tests and an explicitly enumerated subset of saved factors are recorded separately. No72-model retraining, clean-machine reproduction or other-platform full run is claimed. Existing conda/requirements locks are retained; configs/r2_execution_environment.json records actual versions and limits without installing/upgrading packages.
+Validation scope: the R2 packaging checks were performed against the recorded repository base in the existing local Windows scientific environment. CSV/budget recomputation, rank 32 synthetic original/portable/dense comparisons, null/all-present checks, exact-tie oracle tests and an explicitly enumerated subset of saved factors are recorded separately. No72-model retraining, clean-machine reproduction or other-platform full run is claimed. Existing conda/requirements locks are retained; configs/r2_execution_environment.json records actual versions and limits without installing/upgrading packages.
 
 Corrections and interpretation: docs/R2_CORRECTIONS.md keeps same-batch SNR separate from the frozen three-arm batch, preserves fixed-horizon convergence and the500-independent-quadratic/4-full-objective-per-dataset count. See docs/R2_PRIVACY_MODEL.md for curator trust, persistent-state proof and release exclusions. No manuscript/review letter/internal coordination logs, raw interactions, factors or full training trajectories are included.
+
+
+## 8. Extended technical documentation
+
+See [R2_SUPPLEMENT_INDEX.md](docs/R2_SUPPLEMENT_INDEX.md) for exact proof, algorithm, ledger and result locations. [R2_TECHNICAL_DETAILS.md](docs/R2_TECHNICAL_DETAILS.md) and its [PDF](docs/R2_TECHNICAL_DETAILS.pdf) contain S1–S3; the main article retains the core argument and total accounting. [R2_DOCUMENTATION_CHECK.json](docs/R2_DOCUMENTATION_CHECK.json) records independent arithmetic checks and hashes of unchanged scientific files at the observed remote commit. This addition changes no training or result. The expanded technical documents accompany the computational records in this archive and are not part of the preceding version 0.4.0 snapshot.

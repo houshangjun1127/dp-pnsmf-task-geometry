@@ -2,6 +2,14 @@
 
 This repository contains the minimum computational materials needed to inspect and rerun the analyses reported in the associated study, including implementation code, frozen configurations, environment specifications, tests, and machine-readable results.
 
+## Extended technical documentation
+
+The associated R2 article is titled “Released-Query Diagnostics and Matched Evaluation in Full-Catalog User-Level Differentially Private Federated Recommendation.” The repository retains its historical name.
+
+The [technical supplement and reproduction index](docs/R2_SUPPLEMENT_INDEX.md) adds the expanded persistent-state proof, declared Private ALS algorithm and accounting, and original copy-level summaries. Read the [Markdown](docs/R2_TECHNICAL_DETAILS.md) or [typeset PDF](docs/R2_TECHNICAL_DETAILS.pdf). The article retains its core privacy argument, accounting formula and principal comparison.
+
+This is a documentation-only addition. Training code, frozen configurations, all 72 models/36 pairs, random streams and results are unchanged. [Documentation checks](docs/R2_DOCUMENTATION_CHECK.json) independently recompute the budgets and bind existing scientific files to the observed remote base. No retraining or new factor evaluation is claimed. The expanded documents accompany the computational records in this archive and are not part of the preceding version 0.4.0 snapshot.
+
 ## Version 0.4.0 — R2 update
 
 Version 0.4.0 adds the complete two-profile Private ALS comparison:
@@ -45,7 +53,7 @@ The direct P-NSMF mechanism is analyzed under a trusted-central privacy model wi
 
 These materials are a public-seed research simulation archive, not a protected production release.
 
-The current associated revision title is “Released-Query Diagnostics and Matched Evaluation in Full-Catalog User-Level Differentially Private Federated Recommendation”, subject to final manuscript confirmation. Historical releases and tags remain unchanged. Any new archival DOI must be recorded separately after verification; an earlier archive DOI does not automatically cover these additions.
+The current associated revision title is “Released-Query Diagnostics and Matched Evaluation in Full-Catalog User-Level Differentially Private Federated Recommendation”. Historical releases and tags remain unchanged. Version 0.4.0 / DOI 10.5281/zenodo.23308282 identifies the preceding computational snapshot and does not include the expanded technical documents.
 
 ## Historical version 0.3.0 update
 

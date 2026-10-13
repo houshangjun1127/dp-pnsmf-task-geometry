@@ -1,0 +1,304 @@
+{
+  "validation_scope": "Documentation arithmetic and unchanged remote-source fingerprints only; no training, new factor evaluation or clean-machine reproduction.",
+  "main_bound": {
+    "epsilon": 2.193078238018658,
+    "order": 9,
+    "q": 0.1,
+    "sigma": 3,
+    "T": 200,
+    "delta": 1e-05
+  },
+  "private_als": {
+    "models": 72,
+    "pairs": 36,
+    "private_budgets_recomputed": [
+      {
+        "run_id": "amazon_kindle_copy1_seed20260821_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "amazon_kindle_copy1_seed20260821_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "ml1m_copy1_seed20260821_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "ml1m_copy1_seed20260821_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "amazon_kindle_copy1_seed20260822_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "amazon_kindle_copy1_seed20260822_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "amazon_kindle_copy1_seed20260823_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "amazon_kindle_copy1_seed20260823_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "amazon_kindle_copy2_seed20260821_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "amazon_kindle_copy2_seed20260821_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "amazon_kindle_copy2_seed20260822_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "amazon_kindle_copy2_seed20260822_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "amazon_kindle_copy2_seed20260823_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "amazon_kindle_copy2_seed20260823_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "amazon_kindle_copy3_seed20260821_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "amazon_kindle_copy3_seed20260821_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "amazon_kindle_copy3_seed20260822_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "amazon_kindle_copy3_seed20260822_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "amazon_kindle_copy3_seed20260823_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "amazon_kindle_copy3_seed20260823_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "ml1m_copy1_seed20260822_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "ml1m_copy1_seed20260822_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "ml1m_copy1_seed20260823_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "ml1m_copy1_seed20260823_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "ml1m_copy2_seed20260821_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "ml1m_copy2_seed20260821_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "ml1m_copy2_seed20260822_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "ml1m_copy2_seed20260822_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "ml1m_copy2_seed20260823_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "ml1m_copy2_seed20260823_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "ml1m_copy3_seed20260821_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "ml1m_copy3_seed20260821_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "ml1m_copy3_seed20260822_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "ml1m_copy3_seed20260822_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      },
+      {
+        "run_id": "ml1m_copy3_seed20260823_L1_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 5
+      },
+      {
+        "run_id": "ml1m_copy3_seed20260823_L5_private",
+        "rho_coefficient": 0.12750676012346945,
+        "epsilon": 2.193078238018666,
+        "order": 10,
+        "event_count": 11
+      }
+    ],
+    "matched_runs_non_private": 36,
+    "rho_coefficient": 0.12750676012346945
+  },
+  "observed_remote_commit": "bf5a93f71a14718603bde8891eeb72919610de80",
+  "scientific_files_unchanged_against_remote": 29,
+  "scientific_file_sha256": {
+    "configs/pnsmf_r2_reference_states.json": "5a4322d8c4311fccd7b1ae9e84b7dcc0de61420f0001e901c88daede2e306ba2",
+    "configs/private_als_r2_portable_v1.json": "a6f5dc61d66bc788ddfe2c7e2d4f2f0e07f4765ba94ba7ceb247d235b2eb6878",
+    "configs/private_als_r2_run_manifest_v1.csv": "48ab60cfdeaf38eee6e7a40224844adec8b2b9a56a712998574c76c0d5b8bd9e",
+    "configs/r2_execution_environment.json": "2d686ccec6efb9822d960bee096a5f4839808c270405108b60e2bdd9c32ed055",
+    "scripts/recompute_r2_tables.py": "8cba315774ff0a5d8fe3cbe2d76fe08c96faae440e07ce99322676df1c15e2e2",
+    "scripts/run_dpals_baseline.py": "bf10fa9b6b03036727ec98059a9a1f762e7f221e9938ad65ebabf616fc63fa04",
+    "scripts/run_private_als_comparison.py": "52edba1a7ffe0687faec162eb5fa57a417a135e0c06134dc4cf0c08eae6a4162",
+    "scripts/run_r2_pnsmf_reference.py": "04eb8e74d358584397ffd0611043841f151de3c06ea7de0da8267bb38eab653f",
+    "scripts/run_review_revision_dpals_protocol.py": "c8c64befde7769368acf4bdef0039d3ac6ab4e227a08d9c09d2a1c2b8cfc5d64",
+    "tests/r2_dense_oracle.py": "bb81709c021c141b9d26d954c156e9ca10b54230e3e6440d2199862a0ed31743",
+    "tests/test_r2_evaluator_oracle.py": "bb8996dab167902dea61d50b9d39408af0879e7c3b2bd3a7294775ad14ce2331",
+    "tests/test_r2_presence.py": "9cc1eee3f2c949f4dcc654843bdfaeb5c6b6c36666cfb0cedfbb1a32e72eef0e",
+    "tests/test_r2_private_als.py": "a9c5376a501f9a334e0333a77ecafdcf693d51fa43d85a6ffe8fd0cf6c0ae998",
+    "results/r2_corrections/convergence_audit.csv": "52fa8b21856b03abdf2876048f0a23f3c102c4b6e67c03debdb45d50470f5353",
+    "results/r2_corrections/snr_paired_audit.csv": "0f80d996a9ee9656c6b910b17e92856ddfe401c063d7f95a12d04f0bcf1c91c3",
+    "results/r2_corrections/table8_recomputed.csv": "20029b6f2517403daee50f430819d6ffb3e77ba8534300e591377277f4121a8b",
+    "results/r2_corrections/theory_scope_audit.csv": "65186e338deb03458062079631f54df029af7d63e9e7a2d97750b86f5fd0de8c",
+    "results/r2_corrections/three_arm_decomposition.csv": "64b48476394d75e00afe755870ded90c38b8416f71f75d8ba3371b456e7855ec",
+    "results/r2_private_als/comparison_by_copy.csv": "4789b418beda37ffcfe9bf0ef21badc1b9b5fe433d50d642669b808827a4fc26",
+    "results/r2_private_als/execution_manifest.csv": "8499abc498daf8b9e93bfe843f84ddc2b0ecc05a55b4d830682a6ed403d06c41",
+    "results/r2_private_als/ledger_events.csv": "3d79d4c0305ee559f2d1f5bf5c3596eb1723d14e15aa97eaf4c98245c896f9d1",
+    "results/r2_private_als/ledger_summary.csv": "13fbebf6f0f56c2db0648dc63df82ad44596d67a0c203e526c2425290ba94a42",
+    "results/r2_private_als/metrics.csv": "0a7c416290a11f4382ce8e03cd6b014186e4e04c426e4a23ba4f5a9926a1a836",
+    "results/r2_private_als/paired_losses.csv": "4ed9b15a8d234b152c7098a8312980846e5793d37f2a79b150be6f20ff86ff47",
+    "results/r2_private_als/pnsmf_reference_metrics.csv": "744a6c5d91771ec9848fbcada008db02c7049965dc58045507c50d6b2bafdc14",
+    "src/evaluation/full_catalog_stable.py": "098ac5558b7a349084fc3f8531e23b6a27601227301deddd02cb9cab069a4090",
+    "src/privacy/private_als_accounting.py": "a8c3a6397fb44501087cb988fe6e2ceee0a81368704adad3ccb672fe1dac44ec",
+    "src/training/pnsmf_presence.py": "8e53379d06d83449c3a21cbf66a34a363b26ca027288fda1c5aa86a34008dca2",
+    "src/training/private_als.py": "ddc47192f434a193b3153379078b709c0afe05b7952a0990ca1a0ecbcdc057f8"
+  }
+}
