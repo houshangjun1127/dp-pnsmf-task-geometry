@@ -10,7 +10,7 @@ The [technical supplement and reproduction index](docs/R2_SUPPLEMENT_INDEX.md) a
 
 This is a documentation-only addition. Training code, frozen configurations, all 72 models/36 pairs, random streams and results are unchanged. [Documentation checks](docs/R2_DOCUMENTATION_CHECK.json) independently recompute the budgets and bind existing scientific files to the observed remote base. No retraining or new factor evaluation is claimed. The expanded documents accompany the computational records in this archive and are not part of the preceding version 0.4.0 snapshot.
 
-## Version 0.4.0 — R2 update
+## Version 0.4.1 — R2 update
 
 Version 0.4.0 adds the complete two-profile Private ALS comparison:
 
