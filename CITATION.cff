@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Please cite this archive version and the associated article when using these materials."
 title: "Reproducibility materials for Task Geometry and Optimization Sensitivity in Full-Catalog User-Level Differentially Private Federated Recommendation: A Paired Task Audit"
 type: software
-version: 0.5.0
+version: 0.4.1
 license: MIT
 authors:
   - family-names: "Hou"
