@@ -12,7 +12,7 @@ This is a documentation-only addition. Training code, frozen configurations, all
 
 ## Version 0.4.1 — R2 update
 
-Version 0.4.0 adds the complete two-profile Private ALS comparison:
+Version 0.4.1 adds the complete two-profile Private ALS comparison:
 
 - Results for all 72 models and 36 paired comparisons.
 - Portable frozen protocols, execution records, and preprocessing, initialization, and training-noise random streams.
