@@ -9,7 +9,7 @@
 - The expanded documents accompany the computational records in this archive; version 0.4.0's DOI continues to identify its original computational snapshot.
 
 
-## 0.4.0 — R2 update
+## 0.4.1 — R2 update
 
 - Add the two literature-anchored Private ALS configurations with all 72 models and 36 pairs, portable protocols, frozen random streams, event accounting, and full-catalog evaluation.
 - Add 12 identified P-NSMF reference states, Table 9 generation, and documentation of implementation sources and differences.
