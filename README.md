@@ -8,7 +8,17 @@ The associated R2 article is titled “Released-Query Diagnostics and Matched Ev
 
 The [technical supplement and reproduction index](docs/R2_SUPPLEMENT_INDEX.md) adds the expanded persistent-state proof, declared Private ALS algorithm and accounting, and original copy-level summaries. Read the [Markdown](docs/R2_TECHNICAL_DETAILS.md) or [typeset PDF](docs/R2_TECHNICAL_DETAILS.pdf). The article retains its core privacy argument, accounting formula and principal comparison.
 
-This is a documentation-only addition. Training code, frozen configurations, all 72 models/36 pairs, random streams and results are unchanged. [Documentation checks](docs/R2_DOCUMENTATION_CHECK.json) independently recompute the budgets and bind existing scientific files to the observed remote base. No retraining or new factor evaluation is claimed. The expanded documents accompany the computational records in this archive and are not part of the preceding version 0.4.0 snapshot.
+The complete 0.4.1 archive combines computational records and expanded technical documents. The additional bounded validation comparison is indexed below; original L1/L5 outcomes are retained in their separate files.
+
+## Bounded validation selected comparison
+
+The article's Section6.9 and Table 9 include a separate six-candidate validation comparison. [The supplement index](docs/R2_SUPPLEMENT_INDEX.md) maps the protocol, all 36 private candidates,36 final models,18 pairs and all actual ledgers. Original L1/L5 results stay under `results/r2_private_als/`; the additional batch is under `results/validation_selected_als/`.
+
+```text
+python -m scripts.recompute_validation_selected_als --output NEW_SUMMARY.json
+```
+
+This data-free command recalculates selection, paired summaries and all 54 private budgets, and checks18 matched ledgers. [REPRODUCIBILITY.md](REPRODUCIBILITY.md) gives staged reproduction from legally obtained benchmark files. Metrics/seeds and privileged factors do not form a single-model epsilon-DP archive release.
 
 ## Version 0.4.1 — R2 update
 
@@ -53,7 +63,7 @@ The direct P-NSMF mechanism is analyzed under a trusted-central privacy model wi
 
 These materials are a public-seed research simulation archive, not a protected production release.
 
-The current associated revision title is “Released-Query Diagnostics and Matched Evaluation in Full-Catalog User-Level Differentially Private Federated Recommendation”. Historical releases and tags remain unchanged. Version 0.4.0 / DOI 10.5281/zenodo.23308282 identifies the preceding computational snapshot and does not include the expanded technical documents.
+The current associated revision title is “Released-Query Diagnostics and Matched Evaluation in Full-Catalog User-Level Differentially Private Federated Recommendation”. Historical releases and tags remain unchanged. The baseline archive version is0.4.1, DOI10.5281/zenodo.23329090; metadata are recorded in CITATION.cff.
 
 ## Historical version 0.3.0 update
 

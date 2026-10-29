@@ -1,34 +1,24 @@
-# R2 technical supplement and reproduction index
+# Technical supplement and reproduction index
 
-The article retains the compact substantive privacy proof, all-five-query Private ALS accounting, configurations and principal results. This index locates the extended technical materials and unchanged computational evidence.
+The article retains its core proof, all-five-query accounting and principal results. The complete 0.4.1 baseline and the separate bounded validation-selected records use the same scientific ALS core. See [technical Markdown](R2_TECHNICAL_DETAILS.md) and [PDF](R2_TECHNICAL_DETAILS.pdf).
 
-Equation, section and proposition cross-references in S1–S2 use the associated article's numbering. Numbered literature references in the technical document follow the same article reference list; the four cited sources are reproduced at the end of the technical document.
-
-| Material | Repository file |
+| Article material | Evidence and executable location |
 |---|---|
-| S1 full persistent-state derivation | [Technical details](R2_TECHNICAL_DETAILS.md#s1-persistent-state-privacy-proof), [typeset PDF](R2_TECHNICAL_DETAILS.pdf) |
-| S2 algorithm, source differences and full accounting | [Technical details](R2_TECHNICAL_DETAILS.md#s2-private-als-implementation-and-accounting) |
-| S3 original 12 copy-level summary rows | [Technical details](R2_TECHNICAL_DETAILS.md#s3-copy-level-results-and-reproduction-map) |
-| Source-branch provenance | [R2_ALS_SOURCE.md](R2_ALS_SOURCE.md) |
-| Trust and research-release boundaries | [R2_PRIVACY_MODEL.md](R2_PRIVACY_MODEL.md) |
-| Fixed protocol and all random streams | [private_als_r2_portable_v1.json](../configs/private_als_r2_portable_v1.json), [run manifest](../configs/private_als_r2_run_manifest_v1.csv) |
-| Actual execution and excluded-factor identities | [execution_manifest.csv](../results/r2_private_als/execution_manifest.csv) |
-| All 72 model metrics | [metrics.csv](../results/r2_private_als/metrics.csv) |
-| All 36 paired comparisons | [paired_losses.csv](../results/r2_private_als/paired_losses.csv) |
-| Copy/profile cross-method rows | [comparison_by_copy.csv](../results/r2_private_als/comparison_by_copy.csv) |
-| Complete event ledger and budget summary | [ledger_events.csv](../results/r2_private_als/ledger_events.csv), [ledger_summary.csv](../results/r2_private_als/ledger_summary.csv) |
-| Twelve reused P-NSMF references and batch identities | [pnsmf_reference_metrics.csv](../results/r2_private_als/pnsmf_reference_metrics.csv), [reference-state configurations](../configs/pnsmf_r2_reference_states.json) |
-| Data-free regeneration of summaries and budgets | [recompute_r2_tables.py](../scripts/recompute_r2_tables.py) |
-| Arithmetic/fingerprint verification for this documentation | [R2_DOCUMENTATION_CHECK.json](R2_DOCUMENTATION_CHECK.json) |
+| Section3.2/4 and S1 | R2_TECHNICAL_DETAILS.md S1; R2_PRIVACY_MODEL.md; src/training/pnsmf_presence.py |
+| Section5.1/6.10 and Table 10 | S3.2; results/r2_corrections/direct_quadratic_checks.csv and direct_quadratic_summary.json; retained results/revision_v2/theory_validation/objective_inflation_real_states.json |
+| Section6.9 and Table 9 original L1/L5 | S2/S3; configs/private_als_r2_portable_v1.json; results/r2_private_als/metrics.csv,paired_losses.csv,ledger_events.csv |
+| Section6.9 and Table 9 validation-selected | configs/validation_selected_als.json; configs/validation_selected_als_manifest.csv; results/validation_selected_als/selection_lock.json and final_run_manifest.csv |
+| Every candidate and final outcome | results/validation_selected_als/candidate_results.csv and candidate_selection_summary.csv; metrics_by_run.csv; paired_results.csv; summary_by_copy.csv; summary_by_task.csv |
+| Every actual ledger and model identity | results/validation_selected_als/ledger_events.csv,ledger_summary.csv,model_identity.csv |
+| Independent validation summary | results/validation_selected_als/independent_review.json and audit_metrics_diff.csv; audit_selection_recomputed.csv; audit_summary_recomputed.csv |
+| Data-free arithmetic | python -m scripts.recompute_validation_selected_als --output NEW_SUMMARY.json |
+| Staged scientific reproduction | scripts/run_validation_selected_als.py; REPRODUCIBILITY.md; configs/validation_selected_environment.json |
+| Field definitions and exclusions | VALIDATION_SELECTED_DATA.md; raw interactions and factors are excluded |
 
-From the repository root, without interaction data or saved factors:
+Core reuse at baseline commit32bfcb4633cd47eeda1e8a97cd065f46acfad644:
 
-```text
-python -m scripts.recompute_r2_tables --output-dir NEW_R2_CHECK_DIRECTORY
-```
+- `src/training/private_als.py` SHA256 `ddc47192f434a193b3153379078b709c0afe05b7952a0990ca1a0ecbcdc057f8`.
+- `src/evaluation/full_catalog_stable.py` SHA256 `098ac5558b7a349084fc3f8531e23b6a27601227301deddd02cb9cab069a4090`.
+- `src/privacy/private_als_accounting.py` SHA256 `a8c3a6397fb44501087cb988fe6e2ceee0a81368704adad3ccb672fe1dac44ec`.
 
-The command regenerates paired losses, descriptive summaries, Table 9 and ideal-private budgets into a new directory. Source CSVs stay read-only; matched-arm epsilon is undefined/non-DP. Full retraining instructions and data requirements remain in [REPRODUCIBILITY.md](../REPRODUCIBILITY.md). This documentation update does not perform training, factor evaluation or a clean-machine reproduction.
-
-Code, protocols, metrics, ledgers and random streams are unchanged from the observed repository base. Raw interactions, user/item factors, full training histories, manuscripts, author responses, cover letters and internal coordination records are excluded. Extended proofs and implementation notes are supporting technical documentation, not a substitute for the article's main claims.
-
-Version 0.4.0 / DOI 10.5281/zenodo.23308282 identifies the preceding computational snapshot. The expanded technical files accompany the computational records in this archive and are not part of that preceding snapshot.
+The snapshot hashes were checked against the actual execution source, not inferred from filenames. Raw local authorization/recovery logs are not prerequisites for the public commands. The single-model privacy bound is not a guarantee for research metrics, seeds, factors or the entire archive.

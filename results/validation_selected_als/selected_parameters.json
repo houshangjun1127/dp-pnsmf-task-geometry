@@ -1,0 +1,44 @@
+{
+  "amazon_kindle": {
+    "id": "C05",
+    "T": 1,
+    "beta": 0.5,
+    "gravity": 0.6,
+    "ridge": 0.5,
+    "rank": 32,
+    "k": 60,
+    "Gamma": 1.0,
+    "raw_count_sd": 100.0,
+    "normalized_count_sigma": 12.909944487358056,
+    "training_sigmas": [
+      22.314001958810554,
+      22.314001958810554,
+      22.314001958810554
+    ],
+    "r_total": 0.12750676012346943,
+    "epsilon": 2.193078238018666,
+    "optimal_order": 10,
+    "rationale": "C03 shorter horizon recalibrated to same budget; source D.2 T range"
+  },
+  "ml1m": {
+    "id": "C01",
+    "T": 1,
+    "beta": 0.05,
+    "gravity": 2.0,
+    "ridge": 0.5,
+    "rank": 32,
+    "k": 60,
+    "Gamma": 1.0,
+    "raw_count_sd": 100.0,
+    "normalized_count_sigma": 12.909944487358056,
+    "training_sigmas": [
+      22.314001958810554,
+      22.314001958810554,
+      22.314001958810554
+    ],
+    "r_total": 0.12750676012346943,
+    "epsilon": 2.193078238018666,
+    "optimal_order": 10,
+    "rationale": "L1 anchor; source supplement Table4 ML20M epsilon1"
+  }
+}

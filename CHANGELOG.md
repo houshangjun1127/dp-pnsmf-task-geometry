@@ -1,3 +1,10 @@
+# Validation selected ALS records and technical clarification
+
+- Add the bounded six-candidate validation selection and its separate36 final models/18 paired outcomes, complete actual-event ledgers and data-free arithmetic reproduction.
+- Extend S1 with self-contained public mechanism parameters and shared update; preserve the general mixed-displacement proof.
+- Extend S2/S3 with all candidates, selected configurations, copy/task summaries and independent review methods. Add12 direct quadratic identity records and retain the historical floating-point values.
+- Retain the original L1/L5 and main statistical batches unchanged.
+
 # Changes
 
 ## Technical documentation supplement
@@ -6,7 +13,7 @@
 - Preserve the original copy-level summary table and provide direct links to all model metrics, paired losses, event ledgers, frozen random streams and reference states.
 - Add data-free budget/fingerprint checks for these documentation statements.
 - Keep training code, configurations, results, prior versions and privacy/evaluation boundaries unchanged. No new training or factor evaluation.
-- The expanded documents accompany the computational records in this archive; version 0.4.0's DOI continues to identify its original computational snapshot.
+- Computational records and expanded technical documents are combined in the complete 0.4.1 archive.
 
 
 ## 0.4.1 — R2 update
@@ -19,4 +26,4 @@
 - Add synthetic portability tests and no-data summary/budget checks; no new model training was performed during packaging.
 - Generate descriptive aggregates and Table 9 from complete archived metrics instead of storing redundant aggregate result files.
 
-Historical releases 0.3.0 and 0.1.0 remain unchanged. Version 0.4.0 packages the completed R2 comparison and corrections; no new formal model training was performed during packaging. Any new archival DOI must be recorded separately after verification.
+Historical releases 0.3.0 and 0.1.0 remain unchanged. The complete 0.4.1 archive is the baseline for these combined computational and documentation materials.

@@ -1,0 +1,59 @@
+{
+  "rows": [
+    {
+      "dataset": "ml1m",
+      "factor_sha256": "cf5be3dac2be4b2ce6ca97e1a273e02624e3459a36d77652e03ee5f4dfe05068",
+      "noise_seed": 20260932,
+      "max_absolute_residual": 5.800221414276052e-14,
+      "previous_max": 3.82055498349132e-14,
+      "difference_from_previous": 1.9796664307847323e-14,
+      "independent_gradient_max_difference": 1.394717674685353e-15,
+      "independent_hessian_max_difference": 1.27675647831893e-15,
+      "expected_conditional_inflation_recomputed": 0.00928887932588993,
+      "previous_expected": 0.00928887932588993,
+      "mc_reexecuted": false,
+      "mc_independent_samples": 500,
+      "mc_se_denominator": "sqrt(500)",
+      "direct_checks_reexecuted": 4,
+      "training": false
+    },
+    {
+      "dataset": "amazon_kindle",
+      "factor_sha256": "4ca4408e318ea16c3c9b9a66ba5ecab29741ab052350ab9de63200da98371610",
+      "noise_seed": 20260933,
+      "max_absolute_residual": 8.974429272640139e-15,
+      "previous_max": 8.974429272640139e-15,
+      "difference_from_previous": 0.0,
+      "independent_gradient_max_difference": 1.5178830414797062e-18,
+      "independent_hessian_max_difference": 2.6020852139652106e-18,
+      "expected_conditional_inflation_recomputed": 0.0004966216669396682,
+      "previous_expected": 0.0004966216669396685,
+      "mc_reexecuted": false,
+      "mc_independent_samples": 500,
+      "mc_se_denominator": "sqrt(500)",
+      "direct_checks_reexecuted": 4,
+      "training": false
+    },
+    {
+      "dataset": "netflix5k5k",
+      "factor_sha256": "9041ad95fe6361599ff712a6846da99d4d64a351f25a3aa9ef756d918ae9897f",
+      "noise_seed": 20260934,
+      "max_absolute_residual": 9.842821002692403e-15,
+      "previous_max": 9.842821002692403e-15,
+      "difference_from_previous": 0.0,
+      "independent_gradient_max_difference": 7.632783294297951e-17,
+      "independent_hessian_max_difference": 8.673617379884035e-17,
+      "expected_conditional_inflation_recomputed": 0.0056764480890868834,
+      "previous_expected": 0.0056764480890868834,
+      "mc_reexecuted": false,
+      "mc_independent_samples": 500,
+      "mc_se_denominator": "sqrt(500)",
+      "direct_checks_reexecuted": 4,
+      "training": false
+    }
+  ],
+  "total_direct_checks": 12,
+  "baseline_evaluations": 3,
+  "monte_carlo_reexecuted": false,
+  "seed_label_note": "20260931 is original integer RNG seed, not calendar date; dataset offsets 0/1/2 plus1 for identity generator"
+}

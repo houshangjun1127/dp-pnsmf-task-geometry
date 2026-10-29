@@ -103,9 +103,9 @@ For an independently authorized full ALS rerun (not performed during packaging):
 python -m scripts.run_private_als_comparison --data-root PATH_TO_DATA_ROOT --output-dir NEW_ALS_RUN_DIRECTORY
 ```
 
-Use the folder layout in Section 3 and exact18 split hashes in the portable protocol. No interaction files are included. The runner uses one process/at most4 CPU threads, private preprocessing once per pair, frozen rank 32/two profiles and correct raw count sd100. All72 train states are saved before test evaluation. First8 are included in72; only numeric/resource gates allow the other64. Memory monitoring is Windows-specific; --allow-unchecked-memory explicitly waives that gate on other platforms, which have not been validated here. No automatic resume/retry, retuning or test-based selection is provided. Local user factors/diagnostics in generated outputs are research-only. Generated paths and runtime hashes can differ without changing scientific flow.
+Use the folder layout in Section 3 and exact18 split hashes in the portable protocol. No interaction files are included. The runner uses one process/at most4 CPU threads, private preprocessing once per pair, frozen rank 32/two profiles and correct raw count sd 100. All72 train states are saved before test evaluation. First8 are included in72; only numeric/resource gates allow the other64. Memory monitoring is Windows-specific; --allow-unchecked-memory explicitly waives that gate on other platforms, which have not been validated here. No automatic resume/retry, retuning or test-based selection is provided. Local user factors/diagnostics in generated outputs are research-only. Generated paths and runtime hashes can differ without changing scientific flow.
 
-To rebuild the12 old P-NSMF references, the thin launcher reads every recorded scientific configuration and seed from configs/pnsmf_r2_reference_states.json and invokes the retained run_dp_pnsmf_bgd entry point with new paths. It uses all-present fixed slots, rank 20/T200, the recorded direct gradient/clip and dataset-specific rates/omega; private sigma 3, matched sigma 0. No missing-factor ten-seed batch is substituted:
+To rebuild the 12 old P-NSMF references, the thin launcher reads every recorded scientific configuration and seed from configs/pnsmf_r2_reference_states.json and invokes the retained run_dp_pnsmf_bgd entry point with new paths. It uses all-present fixed slots, rank 20/T200, the recorded direct gradient/clip and dataset-specific rates/omega; private sigma 3, matched sigma 0. No missing-factor ten-seed batch is substituted:
 
 ```text
 python -m scripts.run_r2_pnsmf_reference --data-root PATH_TO_DATA_ROOT --output-dir NEW_PNSMF_RUN_DIRECTORY
@@ -115,9 +115,37 @@ Then evaluate its generated factors with src.evaluation.full_catalog_stable.eval
 
 Validation scope: the R2 packaging checks were performed against the recorded repository base in the existing local Windows scientific environment. CSV/budget recomputation, rank 32 synthetic original/portable/dense comparisons, null/all-present checks, exact-tie oracle tests and an explicitly enumerated subset of saved factors are recorded separately. No72-model retraining, clean-machine reproduction or other-platform full run is claimed. Existing conda/requirements locks are retained; configs/r2_execution_environment.json records actual versions and limits without installing/upgrading packages.
 
-Corrections and interpretation: docs/R2_CORRECTIONS.md keeps same-batch SNR separate from the frozen three-arm batch, preserves fixed-horizon convergence and the500-independent-quadratic/4-full-objective-per-dataset count. See docs/R2_PRIVACY_MODEL.md for curator trust, persistent-state proof and release exclusions. No manuscript/review letter/internal coordination logs, raw interactions, factors or full training trajectories are included.
+Corrections and interpretation: docs/R2_CORRECTIONS.md keeps same-batch SNR separate from the frozen three-arm batch, preserves fixed-horizon convergence and the 500-independent-quadratic/4-full-objective-per-dataset count. See docs/R2_PRIVACY_MODEL.md for curator trust, persistent-state proof and release exclusions. No manuscript/review letter/internal coordination logs, raw interactions, factors or full training trajectories are included.
 
 
 ## 8. Extended technical documentation
 
-See [R2_SUPPLEMENT_INDEX.md](docs/R2_SUPPLEMENT_INDEX.md) for exact proof, algorithm, ledger and result locations. [R2_TECHNICAL_DETAILS.md](docs/R2_TECHNICAL_DETAILS.md) and its [PDF](docs/R2_TECHNICAL_DETAILS.pdf) contain S1–S3; the main article retains the core argument and total accounting. [R2_DOCUMENTATION_CHECK.json](docs/R2_DOCUMENTATION_CHECK.json) records independent arithmetic checks and hashes of unchanged scientific files at the observed remote commit. This addition changes no training or result. The expanded technical documents accompany the computational records in this archive and are not part of the preceding version 0.4.0 snapshot.
+See [R2_SUPPLEMENT_INDEX.md](docs/R2_SUPPLEMENT_INDEX.md) for exact proof, algorithm, ledger and result locations. [R2_TECHNICAL_DETAILS.md](docs/R2_TECHNICAL_DETAILS.md) and its [PDF](docs/R2_TECHNICAL_DETAILS.pdf) contain S1–S3; the main article retains the core argument and total accounting. [R2_DOCUMENTATION_CHECK.json](docs/R2_DOCUMENTATION_CHECK.json) records independent arithmetic checks and hashes of unchanged scientific files at the observed remote commit. The 0.4.1 baseline combines its computational records and expanded documents; the additional bounded comparison has separate records and commands below.
+
+
+## Bounded validation selected ALS comparison
+
+The numerical ALS/evaluation/accounting cores are the same byte-for-byte implementations used by the archived real execution: `src/training/private_als.py`, `src/evaluation/full_catalog_stable.py`, `src/privacy/private_als_accounting.py`. Core hashes and Python3.11.15/NumPy2.4.6/Torch2.13.0+cpu/dp-accounting0.6.0/threadpoolctl3.6.0 identities are in `configs/validation_selected_environment.json` and the resource index. Reuse the existing pinned requirements. No local authorization file, private GO, absolute workstation path or downloaded model is required by the portable entry.
+
+First reproduce the record arithmetic without interactions or factors:
+
+```text
+python -m scripts.recompute_validation_selected_als --output NEW_SUMMARY.json
+```
+
+For a new scientific reproduction, legally obtain the two fixed benchmarks in the Section3 folder layout. The portable config includes all 18 expected content hashes; preflight validates structure and train/validation/test disjointness without scoring. Run these phases in order with a new output directory:
+
+```text
+python -m scripts.run_validation_selected_als preflight --data-root DATA_ROOT --output NEW_RUN
+python -m scripts.run_validation_selected_als selection --data-root DATA_ROOT --output NEW_RUN
+python -m scripts.run_validation_selected_als lock --output NEW_RUN
+python -m scripts.run_validation_selected_als final --data-root DATA_ROOT --output NEW_RUN
+python -m scripts.run_validation_selected_als test --data-root DATA_ROOT --output NEW_RUN
+python -m scripts.run_validation_selected_als summarize --output NEW_RUN
+```
+
+Selection opens only train and valid. All36 private candidates must be complete before the lock; final rows are deterministically expanded from the lock, with three new seeds and both arms. Test opens only after all 36 final model artifacts validate. Validation is not merged into train. Shared preprocessing, initialization and noise consumption match the actual scientific execution. Models write into the requested local output and are never silently overwritten; no automatic failure recovery, seed replacement or candidate omission is provided. Generated factors remain local and must not be added to this resource package.
+
+The original job used one worker, four numerical threads,8GiB combined memory,2h per model and24h per batch. The portable wrapper keeps a single process/four threads and checks the persisted24h batch clock at phase entry; it does not duplicate the workstation's Windows watchdog/IO-review service. For retraining, enforce the memory and per-model wall-time limits with an external supervisor and retain failures. Portability smoke checks use public synthetic data, not a new real training or factor-scoring run. Tests can be run with `python -m scripts.check_validation_selected_portability`.
+
+The scientific scope is fixed-copy exploratory comparison. All records are retained, including weak private utility and negative paired losses if present. A zero matched metric gives an undefined relative loss. Do not substitute a ratio of mean NDCGs for the mean of within-pair percentages, pool this batch with Table 8, infer global optimality, or claim the public multi-model archive has the individual model's epsilon guarantee.

@@ -1,0 +1,36 @@
+{
+  "decision": "通过",
+  "config_sha256": "f0d49a2e2ee6e2f9e81d4627bd10dabcf3dd7ec5db5bf87b1abb5d3817e35ba1",
+  "checks": 28,
+  "failed": [],
+  "candidates_recomputed": 36,
+  "final_models_recomputed": 36,
+  "private_ledgers_recomputed": 54,
+  "matched_ledgers_checked": 18,
+  "pairs_checked": 18,
+  "preprocessing_objects_reconstructed": 54,
+  "max_ndcg_abs_diff": 0.0,
+  "max_recall_abs_diff": 0.0,
+  "max_projection_residual": 4.2991192953495856e-14,
+  "selected": {
+    "ml1m": "C01",
+    "amazon_kindle": "C05"
+  },
+  "top_tie_sets": {
+    "ml1m": [
+      "C01"
+    ],
+    "amazon_kindle": [
+      "C05"
+    ]
+  },
+  "training_calls": 0,
+  "production_evaluator_calls": 0,
+  "history_limitations": [
+    "local hashes/order not immutable attestations",
+    "external test-access history unmonitored",
+    "real historical item PSD matrices not saved;source/dense/diagnostics only"
+  ],
+  "method": "Separate reviewer wrote NumPy stable full-catalog metric and event-accounting paths, independently reconstructed preprocessing and checked terminal equations.",
+  "report_assembly": "Numerical reviewer completed checks before its quota interruption; the coordinator assembled final narrative and supplemental consistency checks. This is not a claim that all report writing was independent."
+}

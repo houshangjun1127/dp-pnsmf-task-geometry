@@ -1,0 +1,457 @@
+{
+  "protocol_id": "T23-ALS-VALIDATION-SELECTION-V1-20261027",
+  "purpose": "one target-task validation-selected config per dataset; retain original L1/L5 results",
+  "datasets": [
+    {
+      "id": "ml1m",
+      "code": 1,
+      "N": 6040,
+      "M": 3952,
+      "folder": "ML1M-TXT-FORMAT",
+      "prefix": "ML1M",
+      "split_files": [
+        {
+          "copy": 1,
+          "split": "train",
+          "path": "ML1M-TXT-FORMAT/ML1M-copy1-train",
+          "sha256": "0300213d400e9a7a1449fcee9bdc36e3e53cf285924670128aa63f18fe71833c"
+        },
+        {
+          "copy": 1,
+          "split": "valid",
+          "path": "ML1M-TXT-FORMAT/ML1M-copy1-valid",
+          "sha256": "2f2ab070e1ce280380dfd6b290a50e5c016c98ca5868daa8b7e920b7eb87ff49"
+        },
+        {
+          "copy": 1,
+          "split": "test",
+          "path": "ML1M-TXT-FORMAT/ML1M-copy1-test",
+          "sha256": "ded111f6d13a3d7f976e2447d4393f5ed2f17ad7df5ba04673be902222523b99"
+        },
+        {
+          "copy": 2,
+          "split": "train",
+          "path": "ML1M-TXT-FORMAT/ML1M-copy2-train",
+          "sha256": "8f75d3b9f5b17a2495217bb28c60ece99a5fc0eea5f3183a776f8bdc8f4019bf"
+        },
+        {
+          "copy": 2,
+          "split": "valid",
+          "path": "ML1M-TXT-FORMAT/ML1M-copy2-valid",
+          "sha256": "f1e68866d367a71e12839c509187ff2b3dc87b8311cbf86e6e16a3522b06be78"
+        },
+        {
+          "copy": 2,
+          "split": "test",
+          "path": "ML1M-TXT-FORMAT/ML1M-copy2-test",
+          "sha256": "a6e67adc9e04623503f850c071c5dbf9e5db2cbdc868100a2d26e32f15deeb38"
+        },
+        {
+          "copy": 3,
+          "split": "train",
+          "path": "ML1M-TXT-FORMAT/ML1M-copy3-train",
+          "sha256": "2ff32b284fde183cd5f49134a6beb1eca5285c7a6c2c84dfd6090f9ac84c252b"
+        },
+        {
+          "copy": 3,
+          "split": "valid",
+          "path": "ML1M-TXT-FORMAT/ML1M-copy3-valid",
+          "sha256": "c793be1f5635727791678bfed8c254f51e2e2adcb04b7abeb2bf0d0732d4d7b3"
+        },
+        {
+          "copy": 3,
+          "split": "test",
+          "path": "ML1M-TXT-FORMAT/ML1M-copy3-test",
+          "sha256": "ab4beb294523b700b8a70493133bc33e5755675b508e8a9a69d0c3fe8ca4830a"
+        }
+      ]
+    },
+    {
+      "id": "amazon_kindle",
+      "code": 2,
+      "N": 9862,
+      "M": 11298,
+      "folder": "Amazon_Kindle_Store-TXT-FORMAT",
+      "prefix": "Amazon_Kindle_Store",
+      "split_files": [
+        {
+          "copy": 1,
+          "split": "train",
+          "path": "Amazon_Kindle_Store-TXT-FORMAT/Amazon_Kindle_Store-copy1-train",
+          "sha256": "706e69660e6a64c409e855e6b04adec6a0ae2713a124d0781ecb1dfe4f00ea6b"
+        },
+        {
+          "copy": 1,
+          "split": "valid",
+          "path": "Amazon_Kindle_Store-TXT-FORMAT/Amazon_Kindle_Store-copy1-valid",
+          "sha256": "4ab19febab45e4bba2effbd4c289716b55a67339e0fe50f1f969c7f8dd7d3c77"
+        },
+        {
+          "copy": 1,
+          "split": "test",
+          "path": "Amazon_Kindle_Store-TXT-FORMAT/Amazon_Kindle_Store-copy1-test",
+          "sha256": "53e185eb6879be27d08489ccc0cdc9b069b91eeb0204611e9b275d981a927b90"
+        },
+        {
+          "copy": 2,
+          "split": "train",
+          "path": "Amazon_Kindle_Store-TXT-FORMAT/Amazon_Kindle_Store-copy2-train",
+          "sha256": "75535d1ba016daec325b912d69db82151649279a8ccccd5ff1d69410d9b9a0ee"
+        },
+        {
+          "copy": 2,
+          "split": "valid",
+          "path": "Amazon_Kindle_Store-TXT-FORMAT/Amazon_Kindle_Store-copy2-valid",
+          "sha256": "424243c5c939e07dbe867295bcde1c3f405fb6fa52db03aac4e265983b0ecd01"
+        },
+        {
+          "copy": 2,
+          "split": "test",
+          "path": "Amazon_Kindle_Store-TXT-FORMAT/Amazon_Kindle_Store-copy2-test",
+          "sha256": "20c4f1dc9004c57ec6dce8ae59ec392bcab7b91a8de6e664f51b13f267aa04f6"
+        },
+        {
+          "copy": 3,
+          "split": "train",
+          "path": "Amazon_Kindle_Store-TXT-FORMAT/Amazon_Kindle_Store-copy3-train",
+          "sha256": "d8d4dd89915354a588b682ee94cda5dd4660ab3e4aad0cd1a0dd63b67b5e94c6"
+        },
+        {
+          "copy": 3,
+          "split": "valid",
+          "path": "Amazon_Kindle_Store-TXT-FORMAT/Amazon_Kindle_Store-copy3-valid",
+          "sha256": "d0b53004a327ce7fb5a58d7716e5c15f1e16f25145b4769e5d9245affc6a233d"
+        },
+        {
+          "copy": 3,
+          "split": "test",
+          "path": "Amazon_Kindle_Store-TXT-FORMAT/Amazon_Kindle_Store-copy3-test",
+          "sha256": "19944e7449d9dc582749fc120e07b86ed8477b6fa775ee184043e7ef806387e4"
+        }
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "C01",
+      "T": 1,
+      "beta": 0.05,
+      "gravity": 2.0,
+      "ridge": 0.5,
+      "rank": 32,
+      "k": 60,
+      "Gamma": 1.0,
+      "raw_count_sd": 100.0,
+      "normalized_count_sigma": 12.909944487358056,
+      "training_sigmas": [
+        22.314001958810554,
+        22.314001958810554,
+        22.314001958810554
+      ],
+      "r_total": 0.12750676012346943,
+      "epsilon": 2.193078238018666,
+      "optimal_order": 10,
+      "rationale": "L1 anchor; source supplement Table4 ML20M epsilon1"
+    },
+    {
+      "id": "C02",
+      "T": 3,
+      "beta": 0.1,
+      "gravity": 0.6,
+      "ridge": 0.5,
+      "rank": 32,
+      "k": 60,
+      "Gamma": 1.0,
+      "raw_count_sd": 100.0,
+      "normalized_count_sigma": 12.909944487358056,
+      "training_sigmas": [
+        38.64898511285133,
+        38.64898511285133,
+        38.64898511285133
+      ],
+      "r_total": 0.12750676012346943,
+      "epsilon": 2.193078238018666,
+      "optimal_order": 10,
+      "rationale": "L5 anchor; source supplement Table4 ML20M epsilon5"
+    },
+    {
+      "id": "C03",
+      "T": 3,
+      "beta": 0.5,
+      "gravity": 0.6,
+      "ridge": 0.5,
+      "rank": 32,
+      "k": 60,
+      "Gamma": 1.0,
+      "raw_count_sd": 100.0,
+      "normalized_count_sigma": 12.909944487358056,
+      "training_sigmas": [
+        38.64898511285133,
+        38.64898511285133,
+        38.64898511285133
+      ],
+      "r_total": 0.12750676012346943,
+      "epsilon": 2.193078238018666,
+      "optimal_order": 10,
+      "rationale": "L5 with broader frequent fraction; predeclared hypothesis on catalog coverage, source D.2 beta range; not outcome prediction"
+    },
+    {
+      "id": "C04",
+      "T": 3,
+      "beta": 1.0,
+      "gravity": 0.6,
+      "ridge": 0.5,
+      "rank": 32,
+      "k": 60,
+      "Gamma": 1.0,
+      "raw_count_sd": 100.0,
+      "normalized_count_sigma": 12.909944487358056,
+      "training_sigmas": [
+        38.64898511285133,
+        38.64898511285133,
+        38.64898511285133
+      ],
+      "r_total": 0.12750676012346943,
+      "epsilon": 2.193078238018666,
+      "optimal_order": 10,
+      "rationale": "Predeclared full retained-catalog endpoint of the L5-based coverage exploration; still two noisy counts and permanent tails; does not identify a causal filtering effect."
+    },
+    {
+      "id": "C05",
+      "T": 1,
+      "beta": 0.5,
+      "gravity": 0.6,
+      "ridge": 0.5,
+      "rank": 32,
+      "k": 60,
+      "Gamma": 1.0,
+      "raw_count_sd": 100.0,
+      "normalized_count_sigma": 12.909944487358056,
+      "training_sigmas": [
+        22.314001958810554,
+        22.314001958810554,
+        22.314001958810554
+      ],
+      "r_total": 0.12750676012346943,
+      "epsilon": 2.193078238018666,
+      "optimal_order": 10,
+      "rationale": "C03 shorter horizon recalibrated to same budget; source D.2 T range"
+    },
+    {
+      "id": "C06",
+      "T": 3,
+      "beta": 0.5,
+      "gravity": 0.6,
+      "ridge": 1.0,
+      "rank": 32,
+      "k": 60,
+      "Gamma": 1.0,
+      "raw_count_sd": 100.0,
+      "normalized_count_sigma": 12.909944487358056,
+      "training_sigmas": [
+        38.64898511285133,
+        38.64898511285133,
+        38.64898511285133
+      ],
+      "r_total": 0.12750676012346943,
+      "epsilon": 2.193078238018666,
+      "optimal_order": 10,
+      "rationale": "C03 ridge doubled inside source D.2 range; finite local perturbation, not source-reported optimum"
+    }
+  ],
+  "selection": {
+    "seed": 2026102701,
+    "copies": [
+      1,
+      2,
+      3
+    ],
+    "arm": "private",
+    "metric": "absolute user-macro validation NDCG@20",
+    "aggregate": "equal arithmetic mean over three copies",
+    "one_config_per_dataset": true,
+    "tie_absolute_tolerance": 1e-12,
+    "tie_order": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06"
+    ],
+    "tie_rule": "highest exact score wins unless within1e-12 of max, then smallest candidate ID; report scores and tie set",
+    "failure": "any candidate/copy numeric failure, missing metrics, nonfinite values or budget failure halts selection for whole dataset; do not drop candidate or change seed; no selection until all18 rows",
+    "test_access": "candidate loader has no test path argument; output validation only",
+    "eligibility_gate": "Independently validate actual ledger events, input/code/metric/factor identities, complete candidate-copy-seed coverage, finite NDCG in [0,1], target validation, no candidate shortage. A completed flag alone is not sufficient. Any invalid candidate prevents global lock."
+  },
+  "final": {
+    "seeds": [
+      2026102702,
+      2026102703,
+      2026102704
+    ],
+    "copies": [
+      1,
+      2,
+      3
+    ],
+    "arms": [
+      "private",
+      "matched_no_training_noise"
+    ],
+    "selection_lock": "selection_lock.json binds complete candidate scores and identities before final training/test",
+    "models": 36,
+    "all_train_before_test": true,
+    "selection_reuse": false
+  },
+  "randomness": {
+    "namespace": 20261027,
+    "entropy_vector": "[20261027,dataset_code,copy,stage_code,label,candidate_code,stream_code]",
+    "stage_codes": {
+      "selection": 1,
+      "final": 2
+    },
+    "stream_codes": {
+      "preprocess": 1,
+      "init": 2,
+      "training_noise": 3
+    },
+    "paired": "same preprocessing object and same initial array; only private consumes/applies training noise",
+    "disclosed": "public benchmark PRNG simulation; not deployment DP entropy"
+  },
+  "evaluation": {
+    "cutoff": 20,
+    "batch_size": 256,
+    "dtype": "float64",
+    "device": "cpu",
+    "mask": "complete original train only",
+    "catalog": "all original public IDs; rare vectors zero",
+    "target": "validation in selection; test only after selection lock in final",
+    "targets": "nonempty target users macro; complete target count Recall denominator; IDCG min20,count; duplicates/overlap raise",
+    "projection": "train-only exact final user projection unclipped",
+    "tie": "descending exact score then ascending public item ID"
+  },
+  "accounting": {
+    "target_epsilon": 2.193078238018666,
+    "delta": 1e-05,
+    "orders": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      128.0,
+      256.0
+    ],
+    "count_events": 2,
+    "count_each_r": 0.003,
+    "training": "T*(k/(2sG^2)+k/(2sR^2)+1/(2sK^2))",
+    "conversion": "improved RDP; optimal order computed",
+    "fixed_branch": {
+      "center": false,
+      "center_users": false,
+      "reg_exponents": [
+        0,
+        0
+      ],
+      "whitening": false,
+      "sampling": "permanent tail from private counts",
+      "frequency_rounding": "floor(beta*M)",
+      "count_floor": 1.0,
+      "init_std": 0.1,
+      "item_noise": "full iid then sym, local/shared PSD separately, ridge/gravity afterwards",
+      "rare": "zero factors in original full catalog",
+      "adjacency": "present to null in fixed public slots",
+      "count_events": 2,
+      "training_events_per_sweep": 3,
+      "private_noise_ratio": [
+        1,
+        1,
+        1
+      ]
+    },
+    "scope": "per-model ideal transcript bound; not joint search/release/holdout selection bound"
+  },
+  "resources": {
+    "device": "CPU",
+    "max_threads": 4,
+    "concurrent_processes": 1,
+    "max_process_memory_GiB": 8,
+    "max_per_model_hours": 2,
+    "max_whole_job_hours": 24,
+    "stop_on_limit": true,
+    "no_paid_or_remote": true,
+    "concurrent_process_limit_scope": "At most one model worker; controller/watchdog permitted without concurrent model training. Enforce resource limits on owned job processes; never terminate unrelated user processes."
+  },
+  "reporting": {
+    "exploratory": true,
+    "previous_test_visible": true,
+    "global_optimality": false,
+    "keep_old_results": true,
+    "all_candidates": true,
+    "all_final": true,
+    "negative_losses_retained": true,
+    "M_zero": "undefined percent; report absolute difference",
+    "population_inference": false
+  },
+  "new_real_model_cap": 72,
+  "source_scientific_protocol_sha256": "60d1a4565570bada8ca8305fd3672ef5f9520ed311e447c9751bda68ff0e1129"
+}
