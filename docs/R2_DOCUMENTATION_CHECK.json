@@ -53,7 +53,7 @@
     }
   ],
   "markdown_sha256": "f30ca6e7fde4dbe190bb56e702afc6a4163e5899f4c22a32e6a90e40c8d2dae4",
-  "pdf_sha256": "7703e453a69169465b570b2b88965ce347045b02211442ea37833a155cf358db",
+  "pdf_sha256": "ec07f9c44b5a441c254536e53730d5a34d5e506b9505f4562e5ad1685d4fb6d5",
   "equation_blocks": 21,
   "pdf_pages": 9,
   "old_L1_L5_records_unchanged": true,
@@ -65,5 +65,18 @@
     "copy2_Amazon_C05_loss_display": "95.766079",
     "formula_representation": "rendered images; not native searchable PDF equations",
     "scientific_checks": "Earlier arithmetic and synthetic checks retained; document-only revision did not rerun models or scoring"
+  },
+  "PDF_resource_binding": {
+    "commit": "95094224e6250d29797f4f4ab659a131304bb336",
+    "supporting_resource_archive": "https://codeload.github.com/houshangjun1127/dp-pnsmf-task-geometry/zip/95094224e6250d29797f4f4ab659a131304bb336",
+    "archive_sha256": "7eaafa78b9bf2f303eb7327f0b96e4bad09eefbd3c5eb0632f184fce07f47834",
+    "archive_scope": "Supporting code/configuration/results snapshot; the final PDF is issued after that snapshot",
+    "relative_links_in_PDF": 0,
+    "unresolved_links": 0,
+    "link_annotations": 12,
+    "unique_link_targets": 11,
+    "referenced_resource_bytes_verified": true,
+    "original_formula_graphics_unchanged": 14,
+    "new_Zenodo_DOI_assigned": false
   }
 }
